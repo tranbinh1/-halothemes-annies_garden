@@ -1,0 +1,241 @@
+.halo-toolbar{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 30px 0;
+
+    .page-sidebar-mobile-wrapper{
+    	margin-bottom: 0;
+    }
+
+    @media (min-width: 320px) and (max-width: 1024px){
+    	&.sticky-down{
+	    	.has-stickyToolbar & {
+	    		position: fixed;
+	    		top: 0;
+	    		left: 0;
+	    		right: 0;
+	    		padding: 10px 15px;
+	    		background: #ffffff;
+	    		z-index: 100;
+	    		box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+	    		animation-name: fadeInDown;
+			    animation-duration: .5s;
+			    animation-fill-mode: both;
+	    	}
+
+	    	.has-stickyNavPages.has-stickyToolbar & {
+	    		top: 50px
+	    	}
+    	}
+    }
+
+	@media (min-width: 1025px){
+	    margin-bottom: 45px;
+	}
+}
+
+.toolbar-wrapper{
+	display: flex;
+	justify-content: space-between;
+	width: auto;
+	text-align: right;
+	padding: 0;
+
+	.toolbar-item{
+		display: block;
+		font-size: 0;
+		letter-spacing: 0;
+	}
+
+	.view-as-btn{
+		display: flex;
+		align-items: center;
+
+		.form-label{
+		    display: inline-block;
+		    vertical-align: middle;
+		    font-family: $fontFamily-headings;
+			font-weight: $fontWeight-normal;
+			font-size: $fontSize-root - 2px;
+		    margin-right: 14px;
+		    margin-bottom: 0;
+		    padding: 0;
+		    line-height: 1;
+		}
+
+		.form-group{
+			display: flex;
+		    align-items: center;
+		    overflow: hidden;
+		}
+
+		.btn-view{
+			display: block;
+		    width: 46px;
+		    height: 46px;
+		    padding: 16px;
+		    background: #f7f7f7;
+		    padding-top: 0;
+		    padding-bottom: 0;
+
+		    svg{
+		    	width: 100%;
+		    	height: 100%;
+		    	fill: #c5c5cf;
+		    }
+
+		    &.grid-view{
+		    	border-radius: 3px 0 0 3px;
+		    }
+
+		    &.list-view{
+		    	border-radius: 0 3px 3px 0;
+		    }
+
+		    &.current-view{
+		    	background: $buttonStyle-primary-borderColor;
+
+		    	svg{
+		    		fill: $buttonStyle-primary-color;
+		    	}
+		    }
+		}
+	}
+
+	.actionBar{
+		display: inline-block;
+		vertical-align: top;
+		margin: 0;
+
+		.form-field{
+			border: 0;
+			margin-bottom: 0;
+			display: flex;
+			align-items: center;
+		}
+
+		.form-label{
+		    display: none;
+		    vertical-align: middle;
+		    font-family: $fontFamily-headings;
+			font-weight: $fontWeight-normal;
+			font-size: $fontSize-root - 2px;
+		    margin-right: 14px;
+		    margin-bottom: 0;
+		    padding: 0;
+		    line-height: 1;
+		    color: $header-font-color;
+		}
+
+		.form-select{
+			border: 1px solid #c5c5cf;
+			padding-left: 15px;
+			color: $color-textBase;
+			font-size: $fontSize-root - 2px;
+		}
+
+		&[data-show-products]{
+			display: none;
+		}
+	}
+
+	&:not(.toolbar-mobile){
+		flex: 1;
+		padding-left: 15px;
+		padding-right: 15px;
+
+		.toolbar-item{
+			display: flex;
+			justify-content: center;
+			width: 100%;
+
+			&:first-child{
+				display: none;
+			}
+		}
+	}
+
+	@media (min-width: 551px){
+		.actionBar{
+			.form-select{
+				min-width: 175px;
+			}
+
+			+ .actionBar{
+				margin-left: 15px;
+			}
+
+			&[data-show-products]{
+				display: inline-block;
+			}
+		}
+	}
+
+	@media (min-width: 992px){
+		.actionBar{
+			.form-label{
+				display: inline-block;
+			}
+
+			+ .actionBar{
+				margin-left: 30px;
+			}
+
+			&[data-show-products]{
+				display: inline-block;
+			}
+		}
+	}
+
+	@media (min-width: 1025px){
+		.actionBar{
+			.form-select{
+				min-width: 192px;
+			}
+
+			+ .actionBar{
+				margin-left: 31px;
+			}
+		}
+
+		&:not(.toolbar-mobile){
+			padding-left: 0;
+			padding-right: 0;
+
+			.toolbar-item{
+				justify-content: flex-end;
+				width: 535px;
+				
+				&:first-child{
+					display: block;
+					width: calc(100% - 535px);
+				}
+			}
+		}
+
+		&.toolbar-mobile{
+			display: none;
+		}
+	}
+
+	@media (min-width: 1200px){
+		.actionBar{
+			+ .actionBar{
+				margin-left: 56px;
+			}
+		}
+
+		&:not(.toolbar-mobile){
+
+			.toolbar-item{
+				width: 560px;
+				
+				&:first-child{
+					width: calc(100% - 560px);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{{#if theme_settings.halo-sidebar-recent-post}}
+    <div class="sidebarBlock">
+        {{#if theme_settings.halo-sidebar-recent-post-title}}
+            <h4 class="sidebarBlock-heading">
+                <span>{{theme_settings.halo-sidebar-recent-post-title}}</span>
+            </h4>
+        {{/if}}
+        <div class="sidebarBlock-content">
+        	<div class="recentPosts-list">
+        		{{#each (limit post 3)}}
+        			<div class="item">
+                        <h5 class="title">
+                            <a href="{{url}}" class="link">{{title}}</a>
+                        </h5>
+                        <p class="date">{{date_published}}</p>
+        			</div>
+        		{{/each}}
+        	</div>
+        </div>
+    </div>
+{{/if}}

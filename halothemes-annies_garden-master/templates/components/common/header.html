@@ -1,0 +1,121 @@
+<a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>
+
+<header class="header{{#if theme_settings.haloStickyHeader}} header-sticky{{/if}}">
+    {{#if theme_settings.halo_top_bar_promotion}}
+        <div class="halo-top-bar-promotion">
+            <div class="container">
+                {{#if theme_settings.halo-top_bar_promotion-link}}
+                    <a class="text" href="{{theme_settings.halo-top_bar_promotion-link}}">
+                        {{theme_settings.halo-top_bar_promotion-text}}
+                        <span>{{theme_settings.halo-top_bar_promotion-textLink}}</span>
+                    </a>
+                {{else}}
+                    <p class="text">
+                        {{theme_settings.halo-top_bar_promotion-text}}
+                        <span>{{theme_settings.halo-top_bar_promotion-textLink}}</span>
+                    </p>
+                {{/if}}
+            </div>
+        </div>
+    {{/if}}
+    <div class="halo-middleHeader">
+        <div class="container">
+            <div class="middleHeader-item text-left">
+                <div class="items item--hamburger">
+                    <a class="mobileMenu-toggle" href="#" data-mobile-menu-toggle="menu">
+                        <span class="mobileMenu-toggleIcon">{{lang 'header.toggle_menu'}}</span>
+                    </a>
+                </div>
+                <div class="items item--searchMobile">
+                    <a class="navUser-action" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false" aria-label="{{lang 'search.quick_search.button_search'}}">
+                        <div class="navUser-icon">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-search"></use></svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="middleHeader-item text-center">
+                <div class="items item--logo">
+                    {{#if page_type '===' 'default'}}
+                        <h1 class="header-logo">
+                            {{> components/common/store-logo}}
+                        </h1>
+                    {{else}}
+                        <div class="header-logo">
+                            {{> components/common/store-logo}}
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="middleHeader-item text-right">
+                <div class="items item--quicksearch halo-search">
+                    <div id="quickSearch" data-prevent-quick-search-close>
+                        {{> components/common/quick-search}}
+                    </div>
+                </div>
+                <div class="items item--account">
+                    {{#if customer}}
+                        <p class="myAccount">{{lang 'account.title'}}</p>
+                        <div class="myAccount-link">
+                            <a href="{{urls.account.index}}" data-login-form>{{customer.name}}.</a>
+                        </div>
+                        {{> components/halothemes/halo-account-popup data="account-pc"}}
+                    {{else}}
+                        <p class="myAccount">{{lang 'account.title'}}</p>
+                        <div class="myAccount-link">
+                            <a href="{{urls.auth.login}}" data-login-form>
+                                {{lang 'common.login'}}
+                            </a>
+                            <span>or</span>
+                            <a href="{{urls.auth.create_account}}">
+                                {{lang 'common.sign_up'}}
+                            </a>
+                        </div>
+                        {{> components/halothemes/halo-login-popup data="login-pc" email_id="login_email" password_id="login_pass"}}
+                    {{/if}}
+                    <a class="navUser-action myAccountMobile" {{#if customer}}href="{{urls.account.index}}"{{else}}href="{{urls.auth.login}}"{{/if}} data-login-form-mobile aria-label="{{lang 'account.title'}}">
+                        <div class="navUser-icon">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-user"/></svg>
+                        </div>
+                    </a>
+                </div>
+                {{#if settings.show_wishlist}}
+                    <div class="items item--wishlist">
+                        <a class="navUser-action" href="{{urls.account.wishlists.all}}" aria-label="{{lang 'common.wish_lists'}}">
+                            <div class="navUser-icon">
+                                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-heart"></use></svg>
+                            </div>
+                        </a>
+                    </div>
+                {{/if}}
+                <div class="items item--cart halo-cart">
+                    <a class="navUser-action cartDesktop"
+                        data-cart-preview
+                        data-options="align:right"
+                        href="{{urls.cart}}"
+                        aria-label="{{lang 'cart.nav_aria_label'}}">
+                        <div class="navUser-icon navUser-item-cartIcon">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-cart"></use></svg><span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">{{cart.quantity}}</span>
+                        </div>
+                    </a>
+                    <div class="dropdown-cart" id="cart-preview-dropdown" aria-hidden="true"></div>
+                    <a class="navUser-action cartMobile" data-cart-preview2 href="/cart.php" aria-label="{{lang 'cart.nav_aria_label'}}">
+                        <div class="navUser-icon navUser-item-cartIcon">
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-cart"></use></svg>
+                            <span class="countPill cart-quantity">{{#if cart.items}}{{cart.quantity}}{{else}}0{{/if}}</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="halo-bottomHeader">
+        <div class="navPages-container" id="menu" data-menu>
+            {{> components/common/navigation-menu}}
+        </div>
+    </div>
+</header>
+{{{region name="header_bottom--global"}}}
+{{{region name="header_bottom"}}}
+
+{{> components/halothemes/halo-topBottom-banner position = "top"}}

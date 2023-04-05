@@ -1,0 +1,139 @@
+// =============================================================================
+// PRODUCT REVIEWS (CSS)
+// =============================================================================
+
+
+// Review list
+//
+// 1. Kill extra display inline-block spacing
+// -----------------------------------------------------------------------------
+.productView-reviews-wrapper{
+    position: relative;
+    display: block;
+
+    .productReview-total{
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-normal;
+        font-style: italic;
+        line-height: 1.625;
+        color: $color-textBase;
+        text-align: center;
+    }
+
+    .pagination{
+        margin-top: 0;
+    }
+
+    .button-createReview{
+        margin: 30px 0 0 0;
+
+        .button{
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 768px){
+        .productReview-total{
+            text-align: left;
+        }
+
+        .pagination{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .button-createReview{
+            margin-top: 11px;
+
+            .button{
+                min-width: 230px;
+                width: auto;
+            }
+        }
+    }
+}
+
+.productReviews-list {
+    display: block;
+    margin: 28px 0 0 0;
+    list-style: none;
+}
+
+
+// Review item
+// -----------------------------------------------------------------------------
+
+.productReview {
+    display: block;
+    width: 100%;
+    padding: 32px 0 30px 0;
+
+    + .productReview{
+        border-top: 1px solid #e2e2e7;
+    }
+
+    &:first-child{
+        border-top: 1px solid #e2e2e7;
+    }
+}
+
+.productReview-title {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    text-transform: none;
+}
+
+.productReview-author {
+    font-size: $fontSize-root - 2px;
+    font-weight: $fontWeight-normal;
+    font-style: italic;
+    line-height: 26px;
+    color: stencilColor("color-textSecondary");
+    margin: 10px 0 0 0;
+}
+
+.productReview-title-text{
+    font-size: $fontSize-root;
+    font-weight: $fontWeight-normal;
+    line-height: 1;
+    .home-layout-2 & {
+         font-weight: $fontWeight-bold
+    }
+}
+
+.productReview-rating {
+    display: inline-block;
+    margin: 0 0 0 20px;
+
+    &.rating--small{
+        font-size: 0;
+
+        .icon{
+            width: 16px;
+            height: 16px;
+            vertical-align: unset;
+        }
+    }
+
+    .icon{
+        + .icon{
+            margin-left: 4px;
+        }
+    }
+    
+}
+
+.productReview-ratingNumber {
+    @include u-hidden("visually");
+}
+
+.productReview-body{
+    font-size: $fontSize-root;
+    font-weight: $fontWeight-normal;
+    font-style: italic;
+    color: $color-textBase;
+    line-height: 1.625;
+    margin: 11px 0 0 0;
+}

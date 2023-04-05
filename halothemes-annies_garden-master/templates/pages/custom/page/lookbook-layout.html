@@ -1,0 +1,43 @@
+{{#partial "page"}}
+    <div class="page-container">
+        <div class="container">
+            <div class="breadcrumb-wrapper">
+                {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+            </div>
+            <div class="page page-normal">
+                <div class="page-header">
+                    <h1 class="page-heading">{{ page.title }}</h1>
+                </div>
+                <main class="page-content halo-lookbook-content">
+                    {{#if page.sub_pages}}
+                        <nav class="navBar navBar--sub">
+                            <ul class="navBar-section account-navigation">
+                            {{#each page.sub_pages}}
+                                <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
+                            {{/each}}
+                            </ul>
+                        </nav>  
+                    {{/if}}
+                    
+                    {{{page.content}}}
+                    <div class="lookbook-share">
+                        <div class="lookbook-shareLabel"><span>{{lang 'common.share'}}:</span></div>
+                        {{> components/common/share}}
+                    </div>  
+                    {{{region name="page_builder_content"}}}
+                </main>
+                {{#if page.feed}}
+                    <ul>
+                        {{#each page.feed}}
+                            <li>
+                                <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                                <p>{{content}}</p>
+                            </li>
+                        {{/each}}
+                    </ul>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+{{/partial}}
+{{> layout/base}}

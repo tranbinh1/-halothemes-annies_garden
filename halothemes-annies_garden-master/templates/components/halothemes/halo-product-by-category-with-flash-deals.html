@@ -1,0 +1,184 @@
+{{#if theme_settings.home_product_block_with_flash_deals}}
+	{{#if cateId}}
+		{{#each categories}}
+		    {{#and (if id '==' ../cateId) (if ../cateImg)}}
+				<div class="halo-block halo-block-product halo-block-product-banners home2-flash-deals padding-top-30 padding-bottom-40" data-category-with-banner-id="{{id}}" data-category-with-banner-url="{{url}}" id="product-with-banner-{{id}}">
+					<div class="loadingOverlay"></div>
+					<div class="container">
+						<div class="halo-block-header">
+							<div class="halo-block-header--left">
+				            	<h2 class="title"><span>{{../../cateTitle}}</span></h2>
+				            	<div class="countDowntimer product-count-down" data-count-down="{{../../theme_settings.home_product_block_with_flash_deals_count_down}}"></div>
+							</div>
+							<div class="halo-block-header--right">
+								<a href="{{url}}"><span>{{lang 'home.tab_products.view_all' }}</span></a>
+							</div>
+				        </div>
+				        <div class="productCarousel-wrapper">
+				        	<div class="productCarousel-container">
+				        		<div class="productCarousel"></div>
+				        	</div>
+			        		<div class="productBanner">
+			        			<div class="bannerContent">
+			        				{{#if ../../cateLink}}
+					        			<a class="image" href="{{../../../cateLink}}">
+					        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../settings.store_hash}}/product_images/uploaded_images/{{../../../cateImg}}" alt="{{../../../cateImg}}" title="{{../../../cateImg}}">
+					        			</a>
+					        			<a class="image" href="{{../../../cateLink2}}">
+					        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../settings.store_hash}}/product_images/uploaded_images/{{../../../cateImg2}}" alt="{{../../../cateImg2}}" title="{{../../../cateImg2}}">
+					        			</a>
+					        		{{else}}
+					        			<div class="image">
+					        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../settings.store_hash}}/product_images/uploaded_images/{{../../../cateImg}}" alt="{{../../../cateImg}}" title="{{../../../cateImg}}">
+					        			</div>
+					        			<div class="image">
+					        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../settings.store_hash}}/product_images/uploaded_images/{{../../../cateImg2}}" alt="{{../../../cateImg2}}" title="{{../../../cateImg2}}">
+					        			</div>
+					        		{{/if}}
+			        			</div>
+			        		</div>
+				        </div>
+					</div>
+				</div>
+				{{{region name="home_below_products_by_category"}}}
+			{{else and (if id '==' ../../cateId) (unless ../../cateImg)}}
+				<div class="halo-block halo-block-product halo-block-product-banners2 home2-flash-deals padding-top-30 padding-bottom-30" data-category-with-banner-id="{{id}}" data-category-with-banner-url="{{url}}" id="product-with-banner-{{id}}">
+					<div class="loadingOverlay"></div>
+					<div class="container">
+						<div class="halo-block-header">
+				            <div class="halo-block-header--left">
+				            	<h2 class="title"><span>{{../../../cateTitle}}</span></h2>
+				            	<div class="countDowntimer product-count-down" data-count-down="{{../../../theme_settings.home_product_block_with_flash_deals_count_down}}"></div>
+							</div>
+							<div class="halo-block-header--right">
+								<a href="{{url}}"><span>{{lang 'home.tab_products.view_all' }}</span></a>
+							</div>
+				        </div>
+				        <div class="productCarousel"></div>
+					</div>
+				</div>
+				{{{region name="home_below_products_by_category"}}}
+			{{/and}}
+			{{#each children}}
+				{{#and (if id '==' ../../cateId) (if ../../cateImg)}}
+					<div class="halo-block halo-block-product halo-block-product-banners home2-flash-deals padding-top-30 padding-bottom-30" data-category-with-banner-id="{{id}}" data-category-with-banner-url="{{url}}" id="product-with-banner-{{id}}">
+						<div class="loadingOverlay"></div>
+						<div class="container">
+							<div class="halo-block-header">
+					            <div class="halo-block-header--left">
+					            	<h2 class="title"><span>{{../../../cateTitle}}</span></h2>
+					            	<div class="countDowntimer product-count-down" data-count-down="{{../../../theme_settings.home_product_block_with_flash_deals_count_down}}"></div>
+								</div>
+								<div class="halo-block-header--right">
+									<a href="{{url}}"><span>{{lang 'home.tab_products.view_all' }}</span></a>
+								</div>
+					        </div>
+					        <div class="productCarousel-wrapper">
+					        	<div class="productCarousel-container">
+					        		<div class="productCarousel"></div>
+					        	</div>
+					        	<div class="productBanner">
+				        			<div class="bannerContent">
+				        				{{#if ../../../cateLink}}
+						        			<a class="image" href="{{../../../../cateLink}}">
+						        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../../settings.store_hash}}/product_images/uploaded_images/{{../../../../cateImg}}" alt="{{../../../../cateImg}}" title="{{../../../../cateImg}}">
+						        			</a>
+						        			<a class="image" href="{{../../../../cateLink2}}">
+						        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../../settings.store_hash}}/product_images/uploaded_images/{{../../../../cateImg2}}" alt="{{../../../../cateImg2}}" title="{{../../../../cateImg2}}">
+						        			</a>
+						        		{{else}}
+						        			<div class="image">
+						        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../../settings.store_hash}}/product_images/uploaded_images/{{../../../../cateImg}}" alt="{{../../../../cateImg}}" title="{{../../../../cateImg}}">
+						        			</div>
+						        			<div class="image">
+						        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../../settings.store_hash}}/product_images/uploaded_images/{{../../../../cateImg2}}" alt="{{../../../../cateImg2}}" title="{{../../../../cateImg2}}">
+						        			</div>
+						        		{{/if}}
+				        			</div>
+				        		</div>
+					        </div>
+						</div>
+					</div>
+					{{{region name="home_below_products_by_category"}}}
+				{{else and (if id '==' ../../../cateId) (unless ../../../cateImg)}}
+					<div class="halo-block halo-block-product halo-block-product-banners2 home2-flash-deals padding-top-30 padding-bottom-30" data-category-with-banner-id="{{id}}" data-category-with-banner-url="{{url}}" id="product-with-banner-{{id}}">
+						<div class="loadingOverlay"></div>
+						<div class="container">
+							<div class="halo-block-header">
+					            <div class="halo-block-header--left">
+					            	<h2 class="title"><span>{{../../../../cateTitle}}</span></h2>
+					            	<div class="countDowntimer product-count-down" data-count-down="{{../../../../theme_settings.home_product_block_with_flash_deals_count_down}}"></div>
+								</div>
+								<div class="halo-block-header--right">
+									<a href="{{url}}"><span>{{lang 'home.tab_products.view_all' }}</span></a>
+								</div>
+					        </div>
+					        <div class="productCarousel"></div>
+						</div>
+					</div>
+					{{{region name="home_below_products_by_category"}}}
+				{{/and}}
+				{{#each children}}
+					{{#and (if id '==' ../../../../cateId) (if ../../../../cateImg)}}
+						<div class="halo-block halo-block-product halo-block-product-banners home2-flash-deals padding-top-30 padding-bottom-30" data-category-with-banner-id="{{id}}" data-category-with-banner-url="{{url}}" id="product-with-banner-{{id}}">
+							<div class="loadingOverlay"></div>
+							<div class="container">
+								<div class="halo-block-header">
+						            <div class="halo-block-header--left">
+						            	<h2 class="title"><span>{{../../../../../cateTitle}}</span></h2>
+						            	<div class="countDowntimer product-count-down" data-count-down="{{../../../../../theme_settings.home_product_block_with_flash_deals_count_down}}"></div>
+									</div>
+									<div class="halo-block-header--right">
+										<a href="{{url}}"><span>{{lang 'home.tab_products.view_all' }}</span></a>
+									</div>
+						        </div>
+						        <div class="productCarousel-wrapper">
+						        	<div class="productCarousel-container">
+						        		<div class="productCarousel"></div>
+						        	</div>
+						        	<div class="productBanner">
+					        			<div class="bannerContent">
+					        				{{#if ../../../../../cateLink}}
+							        			<a class="image" href="{{../../../../../../cateLink}}">
+							        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../../../../settings.store_hash}}/product_images/uploaded_images/{{../../../../../../cateImg}}" alt="{{../../../../../../cateImg}}" title="{{../../../../../../cateImg}}">
+							        			</a>
+							        			<a class="image" href="{{../../../../../../cateLink2}}">
+							        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../../../../settings.store_hash}}/product_images/uploaded_images/{{../../../../../../cateImg2}}" alt="{{../../../../../../cateImg2}}" title="{{../../../../../../cateImg2}}">
+							        			</a>
+							        		{{else}}
+							        			<div class="image">
+							        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../../../../settings.store_hash}}/product_images/uploaded_images/{{../../../../../../cateImg}}" alt="{{../../../../../../cateImg}}" title="{{../../../../../../cateImg}}">
+							        			</div>
+							        			<div class="image">
+							        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../../../../settings.store_hash}}/product_images/uploaded_images/{{../../../../../../cateImg2}}" alt="{{../../../../../../cateImg2}}" title="{{../../../../../../cateImg2}}">
+							        			</div>
+							        		{{/if}}
+					        			</div>
+					        		</div>
+						        </div>
+							</div>
+						</div>
+						{{{region name="home_below_products_by_category"}}}
+					{{else and (if id '==' ../../../../../cateId) (unless ../../../../../cateImg)}}
+						<div class="halo-block halo-block-product halo-block-product-banners2 home2-flash-deals padding-top-30 padding-bottom-30" data-category-with-banner-id="{{id}}" data-category-with-banner-url="{{url}}" id="product-with-banner-{{id}}">
+							<div class="loadingOverlay"></div>
+							<div class="container">
+								<div class="halo-block-header">
+						            <div class="halo-block-header--left">
+						            	<h2 class="title"><span>{{../../../../../../cateTitle}}</span></h2>
+						            	<div class="countDowntimer product-count-down" data-count-down="{{../../../../../../theme_settings.home_product_block_with_flash_deals_count_down}}"></div>
+									</div>
+									<div class="halo-block-header--right">
+										<a href="{{url}}"><span>{{lang 'home.tab_products.view_all' }}</span></a>
+									</div>
+						        </div>
+						        <div class="productCarousel"></div>
+							</div>
+						</div>
+						{{{region name="home_below_products_by_category"}}}
+					{{/and}}
+				{{/each}}
+			{{/each}}
+		{{/each}}
+	{{/if}}
+{{/if}}

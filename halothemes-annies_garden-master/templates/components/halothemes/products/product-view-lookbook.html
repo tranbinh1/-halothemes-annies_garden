@@ -1,0 +1,124 @@
+{{#if theme_settings.halo-productView-lookbook}}
+	<div class="productView-moreItem">
+		<div class="productView-lookbook" data-slick='{
+	        "dots": true,
+	        "arrows": false,
+	        "autoplay": false,
+	        "autoplaySpeed": 5000,
+	        "slidesToShow": 1,
+	        "slidesToScroll": 1,
+	        "adaptiveHeight": true
+		}'>
+		{{#filter (arrayify (pluck product.custom_fields 'name')) '__lookbookimage1'}}
+			{{#each ../product.custom_fields}}
+		    	{{#if name '==' '__lookbookimage1'}}
+		    		{{#if (merge this pointx=../../../theme_settings.halo-productView-lookbook-1x)}}{{/if}}
+		    		{{#if (merge this pointy=../../../theme_settings.halo-productView-lookbook-1y)}}{{/if}}
+		    		<div class="item">
+			            <div class="image">
+			                <img  class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../settings.store_hash}}/product_images/uploaded_images/{{value}}" alt="{{../../../product.title}}" title="{{../../../product.title}}">
+			            </div>
+		                <div class="content" style="top: {{pointy}}; left: {{pointx}};">
+		                    {{#each ../../../product.custom_fields}}
+		                		{{#if name '==' '__lookbookid1'}}
+		                    		<div class="item-point" data-product-id="{{value}}">+</div>
+		                    	{{/if}}
+		                    {{/each}}
+		                </div>
+			        </div>
+		    	{{/if}}
+		    {{/each}}
+		    {{#each ../product.custom_fields}}
+		    	{{#if name '==' '__lookbookimage2'}}
+		    		{{#if (merge this pointx=../../../theme_settings.halo-productView-lookbook-2x)}}{{/if}}
+		    		{{#if (merge this pointy=../../../theme_settings.halo-productView-lookbook-2y)}}{{/if}}
+		    		<div class="item">
+			            <div class="image">
+			                <img  class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../settings.store_hash}}/product_images/uploaded_images/{{value}}" alt="{{../../../product.title}}" title="{{../../../product.title}}">
+			            </div>
+		                <div class="content" style="top: {{pointy}}; left: {{pointx}};">
+		                	{{#each ../../../product.custom_fields}}
+		                		{{#if name '==' '__lookbookid2'}}
+		                    		<div class="item-point" data-product-id="{{value}}">+</div>
+		                    	{{/if}}
+		                    {{/each}}
+		                </div>
+			        </div>
+		    	{{/if}}
+		    {{/each}}
+		    {{#each ../product.custom_fields}}
+		    	{{#if name '==' '__lookbookimage3'}}
+		    		{{#if (merge this pointx=../../../theme_settings.halo-productView-lookbook-3x)}}{{/if}}
+		    		{{#if (merge this pointy=../../../theme_settings.halo-productView-lookbook-3y)}}{{/if}}
+		    		<div class="item">
+			            <div class="image">
+			                <img  class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../settings.store_hash}}/product_images/uploaded_images/{{value}}" alt="{{../../../product.title}}" title="{{../../../product.title}}">
+			            </div>
+		                <div class="content" style="top: {{pointy}}; left: {{pointx}};">
+		                    {{#each ../../../product.custom_fields}}
+		                		{{#if name '==' '__lookbookid3'}}
+		                    		<div class="item-point" data-product-id="{{value}}">+</div>
+		                    	{{/if}}
+		                    {{/each}}
+		                </div>
+			        </div>
+		    	{{/if}}
+		    {{/each}}
+		{{else}}
+			{{#each (limit ../product.images 3)}}
+				{{#if @index '==' 0}}
+					{{#if (merge this pointx=../../../theme_settings.halo-productView-lookbook-1x)}}{{/if}}
+		    		{{#if (merge this pointy=../../../theme_settings.halo-productView-lookbook-1y)}}{{/if}}
+		    		<div class="item">
+			            <div class="image">
+			                <img  class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage this 'product_size' (cdn theme_settings.default_image_product)}}" alt="{{../../../product.title}}" title="{{../../../product.title}}">
+			            </div>
+		                <div class="content" style="top: {{pointy}}; left: {{pointx}};">
+		                    {{#each ../../../product.custom_fields}}
+		                		{{#if name '==' '__lookbookid1'}}
+		                    		<div class="item-point" data-product-id="{{value}}">+</div>
+		                    	{{/if}}
+		                    {{/each}}
+		                </div>
+			        </div>
+				{{/if}}
+				{{#if @index '==' 1}}
+					{{#if (merge this pointx=../../../theme_settings.halo-productView-lookbook-2x)}}{{/if}}
+		    		{{#if (merge this pointy=../../../theme_settings.halo-productView-lookbook-2y)}}{{/if}}
+		    		<div class="item">
+			            <div class="image">
+			                <img  class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage this 'product_size' (cdn theme_settings.default_image_product)}}" alt="{{../../../product.title}}" title="{{../../../product.title}}">
+			            </div>
+		                <div class="content" style="top: {{pointy}}; left: {{pointx}};">
+		                	{{#each ../../../product.custom_fields}}
+		                		{{#if name '==' '__lookbookid2'}}
+		                    		<div class="item-point" data-product-id="{{value}}">+</div>
+		                    	{{/if}}
+		                    {{/each}}
+		                </div>
+			        </div>
+				{{/if}}
+				{{#if @index '==' 2}}
+					{{#if (merge this pointx=../../../theme_settings.halo-productView-lookbook-2x)}}{{/if}}
+		    		{{#if (merge this pointy=../../../theme_settings.halo-productView-lookbook-2y)}}{{/if}}
+		    		<div class="item">
+			            <div class="image">
+			                <img  class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage this 'product_size' (cdn theme_settings.default_image_product)}}" alt="{{../../../product.title}}" title="{{../../../product.title}}">
+			            </div>
+		                <div class="content" style="top: {{pointy}}; left: {{pointx}};">
+		                    {{#each ../../../product.custom_fields}}
+		                		{{#if name '==' '__lookbookid3'}}
+		                    		<div class="item-point" data-product-id="{{value}}">+</div>
+		                    	{{/if}}
+		                    {{/each}}
+		                </div>
+			        </div>
+				{{/if}}
+			{{/each}}
+		{{/filter}}
+		</div>
+		<div class="lookbook-popup">
+		    <div class="popup"></div>
+		</div>
+	</div>
+{{/if}}

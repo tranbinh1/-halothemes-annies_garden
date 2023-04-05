@@ -1,0 +1,46 @@
+<div class="productCarousel"
+    id="{{block_id}}"
+    data-list-name="{{list}}"
+    data-slick='{
+        "dots": true,
+        "arrows": false,
+        "infinite": false,
+        "mobileFirst": true,
+        "adaptiveHeight": true,
+        "infinite": false,
+        "slidesToShow": 2,
+        "slidesToScroll": 1,
+        "nextArrow": "<svg class=&apos;slick-next slick-arrow slick-arrow-large&apos; aria-label=&apos;Next Slide&apos;><use xlink:href=&apos;#slick-arrow-next&apos;></use></svg>", 
+        "prevArrow": "<svg class=&apos;slick-prev slick-arrow slick-arrow-large&apos; aria-label=&apos;Previous Slide&apos;><use xlink:href=&apos;#slick-arrow-prev&apos;></use></svg>",
+        "responsive": [
+            {
+                "breakpoint": 1024,
+                "settings": {
+                    "arrows": true,
+                    "slidesToShow": {{theme_settings.home_product_block_col}},
+                    "slidesToScroll": {{theme_settings.home_product_block_col}}
+                }
+            },
+            {
+                "breakpoint": 991,
+                "settings": {
+                    "slidesToShow": {{subtract theme_settings.home_product_block_col 1}},
+                    "slidesToScroll": {{subtract theme_settings.home_product_block_col 1}}
+                }
+            },
+            {
+                "breakpoint": 767,
+                "settings": {
+                    "slidesToShow": {{subtract theme_settings.home_product_block_col 2}},
+                    "slidesToScroll": {{subtract theme_settings.home_product_block_col 2}}
+                }
+            }
+        ]
+    }'
+>
+    {{#each (limit products theme_settings.home_product_block-id-limit)}}
+        <div class="productCarousel-slide">
+            {{> components/products/card productsnew=../productsnew settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1)}}
+        </div>
+    {{/each}}
+</div>

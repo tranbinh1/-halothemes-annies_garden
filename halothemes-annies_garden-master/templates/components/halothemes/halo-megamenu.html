@@ -1,0 +1,219 @@
+{{#if theme_settings.haloMegamenu}}
+    <script>
+        var haloMegaMenu = new window.haloMegaMenu();
+
+        var mega_menu_style1_item = parseInt({{theme_settings.mega_menu_style1_item}}),
+            mega_menu_style2_item = parseInt({{theme_settings.mega_menu_style2_item}}),
+            mega_menu_style3_item = parseInt({{theme_settings.mega_menu_style3_item}}),
+            mega_menu_style4_item = parseInt({{theme_settings.mega_menu_style4_item}});
+
+        var mega_menu_new_label = parseInt({{theme_settings.mega_menu_new_label}}),
+            mega_menu_sale_label = parseInt({{theme_settings.mega_menu_sale_label}}),
+            mega_menu_hot_label = parseInt({{theme_settings.mega_menu_hot_label}});
+
+        function SetItemMegaMenu(){
+            if($(window).width() > 1024) {
+                $('.navPages-list-megamenu > li').mouseover(function() {
+
+                    var numberItem = $(this).index() + 1;
+
+                    if (!$(this).hasClass('has-megamenu')) {
+                        LoadMegaMenu(numberItem);
+                    }
+                });
+            }
+
+            $(document).on('click','#halo-menu-mobile .navPages-list:not(.navPages-list--user) > li > .navPages-action' , function() {
+                var numberItem = $(this).parent().index() + 1;
+
+                if (!$(this).parent().hasClass('has-megamenu')) {
+                    LoadMegaMenu(numberItem);
+                }
+            });
+        }
+            
+        function LoadMegaMenu(numberItem){
+            if (mega_menu_style1_item == numberItem) {
+                haloMegaMenu.menuItem(mega_menu_style1_item).setMegaMenu({
+                    style: 'style 1',
+                    imageAreaWidth: '{{theme_settings.mega_menu_style1_item-img-width}}',
+                    cateAreaWidth: '{{theme_settings.mega_menu_style1_item-col-width}}',
+                    productId: '{{theme_settings.mega_menu_style1_item-productID}}',
+                    cateColumns: {{theme_settings.mega_menu_style1_item-col}},
+                    products:'<h3 class="megamenu-title">{{theme_settings.mega_menu_style1_item-productBlock}}</h3>\
+                            <div class="megamenu-slider"></div>',
+                    content: '<ul class="navPage-subMenu-links navPage-subMenu-list">\
+                                <li class="navPage-subMenu-item-child">\
+                                    <p class="navPage-subMenu-action navPages-action navPages-action-depth-max has-subMenu">\
+                                        <span class="text">{{theme_settings.mega_menu_style1_item-custom-title}}</span>\
+                                        <span class="navPages-action-moreIcon" aria-hidden="true">\
+                                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-down"></use></svg>\
+                                        </span>\
+                                    </p>\
+                                    <div class="navPage-subMenu navPage-subMenu-horizontal" aria-hidden="true" tabindex="-1">\
+                                        <ul class="navPage-subMenu-list">\
+                                            <li class="navPage-subMenu-item-child navPage-subMenu-title">\
+                                                <p class="navPage-subMenu-action navPages-action">\
+                                                    <span class="navPages-action-moreIcon" aria-hidden="true">\
+                                                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-down"></use></svg>\
+                                                        <span>back</span>\
+                                                    </span>\
+                                                    <span class="text">{{theme_settings.mega_menu_style1_item-custom-title}}</span>\
+                                                </p>\
+                                            </li>\
+                                            <li class="navPage-subMenu-item-child navPages-action-end">\
+                                                <a class="navPage-subMenu-action navPages-action" href="{{theme_settings.mega_menu_style1_item-custom-link1}}"><span class="text">\
+                                                {{theme_settings.mega_menu_style1_item-custom-linktext1}}</span></a>\
+                                            </li>\
+                                            <li class="navPage-subMenu-item-child navPages-action-end">\
+                                                <a class="navPage-subMenu-action navPages-action" href="{{theme_settings.mega_menu_style1_item-custom-link2}}"><span class="text">{{theme_settings.mega_menu_style1_item-custom-linktext2}}</span></a>\
+                                            </li>\
+                                            <li class="navPage-subMenu-item-child navPages-action-end">\
+                                                <a class="navPage-subMenu-action navPages-action" href="{{theme_settings.mega_menu_style1_item-custom-link3}}"><span class="text">{{theme_settings.mega_menu_style1_item-custom-linktext3}}</span></a>\
+                                            </li>\
+                                            <li class="navPage-subMenu-item-child navPages-action-end">\
+                                                <a class="navPage-subMenu-action navPages-action" href="{{theme_settings.mega_menu_style1_item-custom-link4}}"><span class="text">{{theme_settings.mega_menu_style1_item-custom-linktext4}}</span></a>\
+                                            </li>\
+                                            <li class="navPage-subMenu-item-child navPages-action-end">\
+                                                <a class="navPage-subMenu-action navPages-action" href="{{theme_settings.mega_menu_style1_item-custom-link5}}"><span class="text">{{theme_settings.mega_menu_style1_item-custom-linktext5}}</span></a>\
+                                            </li>\
+                                        </ul>\
+                                    </div>\
+                                </li>\
+                            </ul>',
+                    images: '<a class="image" href="{{theme_settings.mega_menu_style1_item-link}}">\
+                                <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.mega_menu_style1_item-img}}" alt="{{theme_settings.mega_menu_style1_item-img-alt}}" title="{{theme_settings.mega_menu_style1_item-img-alt}}"/>\
+                            </a>'
+                });
+            } else if (mega_menu_style2_item == numberItem){
+                haloMegaMenu.menuItem(mega_menu_style2_item).setMegaMenu({
+                    style: 'style 2',
+                    imageAreaWidth: '{{theme_settings.mega_menu_style2_item-img-width}}',
+                    cateAreaWidth: '{{theme_settings.mega_menu_style2_item-col-width}}',
+                    cateColumns: {{theme_settings.mega_menu_style2_item-col}},
+                    content: '<ul class="navPage-subMenu-links navPage-subMenu-list">\
+                                <li class="navPage-subMenu-item-child">\
+                                    <p class="navPage-subMenu-action navPages-action navPages-action-depth-max has-subMenu">\
+                                        <span class="text">{{theme_settings.mega_menu_style2_item-custom-title}}</span>\
+                                        <span class="navPages-action-moreIcon" aria-hidden="true">\
+                                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-down"></use></svg>\
+                                        </span>\
+                                    </p>\
+                                    <div class="navPage-subMenu navPage-subMenu-horizontal" aria-hidden="true" tabindex="-1">\
+                                        <ul class="navPage-subMenu-list">\
+                                            <li class="navPage-subMenu-item-child navPage-subMenu-title">\
+                                                <p class="navPage-subMenu-action navPages-action">\
+                                                    <span class="navPages-action-moreIcon" aria-hidden="true">\
+                                                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-down"></use></svg>\
+                                                        <span>back</span>\
+                                                    </span>\
+                                                    <span class="text">{{theme_settings.mega_menu_style2_item-custom-title}}</span>\
+                                                </p>\
+                                            </li>\
+                                            <li class="navPage-subMenu-item-child navPages-action-end">\
+                                                <a class="navPage-subMenu-action navPages-action" href="{{theme_settings.mega_menu_style2_item-custom-link1}}"><span class="text">\
+                                                {{theme_settings.mega_menu_style2_item-custom-linktext1}}</span></a>\
+                                            </li>\
+                                            <li class="navPage-subMenu-item-child navPages-action-end">\
+                                                <a class="navPage-subMenu-action navPages-action" href="{{theme_settings.mega_menu_style2_item-custom-link2}}"><span class="text">{{theme_settings.mega_menu_style2_item-custom-linktext2}}</span></a>\
+                                            </li>\
+                                            <li class="navPage-subMenu-item-child navPages-action-end">\
+                                                <a class="navPage-subMenu-action navPages-action" href="{{theme_settings.mega_menu_style2_item-custom-link3}}"><span class="text">{{theme_settings.mega_menu_style2_item-custom-linktext3}}</span></a>\
+                                            </li>\
+                                            <li class="navPage-subMenu-item-child navPages-action-end">\
+                                                <a class="navPage-subMenu-action navPages-action" href="{{theme_settings.mega_menu_style2_item-custom-link4}}"><span class="text">{{theme_settings.mega_menu_style2_item-custom-linktext4}}</span></a>\
+                                            </li>\
+                                            <li class="navPage-subMenu-item-child navPages-action-end">\
+                                                <a class="navPage-subMenu-action navPages-action" href="{{theme_settings.mega_menu_style2_item-custom-link5}}"><span class="text">{{theme_settings.mega_menu_style2_item-custom-linktext5}}</span></a>\
+                                            </li>\
+                                        </ul>\
+                                    </div>\
+                                </li>\
+                            </ul>',
+                    products:'<h3 class="megamenu-title">{{theme_settings.mega_menu_style2_item-productBlock}}</h3>\
+                            <div class="megamenu-brands">\
+                                <a class="image" href="{{theme_settings.mega_menu_style2_item-brandlink1}}">\
+                                    <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.mega_menu_style2_item-brand1}}" alt="{{theme_settings.mega_menu_style2_item-brand1}}" title="{{theme_settings.mega_menu_style2_item-brand1}}">\
+                                </a>\
+                                <a class="image" href="{{theme_settings.mega_menu_style2_item-brandlink2}}">\
+                                    <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.mega_menu_style2_item-brand2}}" alt="{{theme_settings.mega_menu_style2_item-brand2}}" title="{{theme_settings.mega_menu_style2_item-brand2}}">\
+                                </a>\
+                                <a class="image" href="{{theme_settings.mega_menu_style2_item-brandlink3}}">\
+                                    <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.mega_menu_style2_item-brand3}}" alt="{{theme_settings.mega_menu_style2_item-brand3}}" title="{{theme_settings.mega_menu_style2_item-brand3}}">\
+                                </a>\
+                                <a class="image" href="{{theme_settings.mega_menu_style2_item-brandlink4}}">\
+                                    <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.mega_menu_style2_item-brand4}}" alt="{{theme_settings.mega_menu_style2_item-brand4}}" title="{{theme_settings.mega_menu_style2_item-brand4}}">\
+                                </a>\
+                            </div>',
+                    images: '<div class="item"><a class="image" href="{{theme_settings.mega_menu_style2_item-link1}}">\
+                                <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.mega_menu_style2_item-img1}}" alt="{{theme_settings.mega_menu_style2_item-img1-alt}}" title="{{theme_settings.mega_menu_style2_item-img1-alt}}"/>\
+                            </a></div>\
+                            <div class="item"><a class="image" href="{{theme_settings.mega_menu_style2_item-link2}}">\
+                                <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.mega_menu_style2_item-img2}}" alt="{{theme_settings.mega_menu_style2_item-img2-alt}}" title="{{theme_settings.mega_menu_style2_item-img2-alt}}"/>\
+                            </a></div>'
+                });
+            } else if (mega_menu_style3_item == numberItem){
+                haloMegaMenu.menuItem(mega_menu_style3_item).setMegaMenu({
+                    style: 'style 3',
+                    cateColumns: {{theme_settings.mega_menu_style3_item-col}},
+                    imagesTop: ['<a class="image" href="{{theme_settings.mega_menu_style3_item-link1}}"><img class="lazyload" src="{{cdn 'img/loading.svg'}}"  data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.mega_menu_style3_item-img1}}" alt="{{theme_settings.mega_menu_style3_item-img1-alt}}" title="{{theme_settings.mega_menu_style3_item-img1-alt}}"/></a>',
+                                '<a class="image" href="{{theme_settings.mega_menu_style3_item-link2}}"><img class="lazyload" src="{{cdn 'img/loading.svg'}}"  data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.mega_menu_style3_item-img2}}" alt="{{theme_settings.mega_menu_style3_item-img2-alt}}" title="{{theme_settings.mega_menu_style3_item-img2-alt}}"/></a>',
+                                '<a class="image" href="{{theme_settings.mega_menu_style3_item-link3}}"><img class="lazyload" src="{{cdn 'img/loading.svg'}}"  data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.mega_menu_style3_item-img3}}" alt="{{theme_settings.mega_menu_style3_item-img3-alt}}" title="{{theme_settings.mega_menu_style3_item-img3-alt}}"/></a>',
+                                '<a class="image" href="{{theme_settings.mega_menu_style3_item-link4}}"><img class="lazyload" src="{{cdn 'img/loading.svg'}}"  data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.mega_menu_style3_item-img4}}" alt="{{theme_settings.mega_menu_style3_item-img4-alt}}" title="{{theme_settings.mega_menu_style3_item-img4-alt}}"/></a>',
+                                '<a class="image" href="{{theme_settings.mega_menu_style3_item-link5}}"><img class="lazyload" src="{{cdn 'img/loading.svg'}}"  data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.mega_menu_style3_item-img5}}" alt="{{theme_settings.mega_menu_style3_item-img5-alt}}" title="{{theme_settings.mega_menu_style3_item-img5-alt}}"/></a>'
+                    ],
+                    bottomCates: '<div class="megamenu-custom-list"><div class="container"><span class="text">{{theme_settings.mega_menu_style3_item-bottomCates}}</span></div></div>',
+                    countDown: '{{theme_settings.mega_menu_style3_item-countDown}}'
+                });
+            } else if (mega_menu_style4_item == numberItem){ 
+                haloMegaMenu.menuItem(mega_menu_style4_item).setMegaMenu({
+                    style: 'style 4',
+                    cateColumns: {{theme_settings.mega_menu_style4_item-col}},
+                    productId: '{{theme_settings.mega_menu_style4_item-productID}}',
+                    products:'<h3 class="megamenu-title">{{theme_settings.mega_menu_style4_item-productBlock}}</h3>\
+                            <div class="megamenu-slider2"></div>',
+                    images: '<div class="item"><a class="image" href="{{theme_settings.mega_menu_style4_item-link1}}">\
+                                <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.mega_menu_style4_item-img1}}" alt="{{theme_settings.mega_menu_style4_item-img1-alt}}" title="{{theme_settings.mega_menu_style4_item-img1-alt}}"/>\
+                            </a></div>\
+                            <div class="item"><a class="image" href="{{theme_settings.mega_menu_style4_item-link2}}">\
+                                <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.mega_menu_style4_item-img2}}" alt="{{theme_settings.mega_menu_style4_item-img2-alt}}" title="{{theme_settings.mega_menu_style4_item-img2-alt}}"/>\
+                            </a></div>',
+                    imagesCustom: '<a class="image" href="{{theme_settings.mega_menu_style4_item-linkCustom}}">\
+                            <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.mega_menu_style4_item-imgCustom}}" alt="{{theme_settings.mega_menu_style4_item-imgCustom-alt}}" title="{{theme_settings.mega_menu_style4_item-imgCustom-alt}}"/>\
+                            </a>'
+                });
+            } else{
+                return;
+            }
+        }
+
+        function MegaMenuLabel(){
+            {{#if theme_settings.mega_menu_new_label}}
+                haloMegaMenu.menuItem(mega_menu_new_label).setMegaMenu({
+                    label: 'new',
+                    disabled: true,
+                });
+            {{/if}}
+
+            {{#if theme_settings.mega_menu_hot_label}}
+                haloMegaMenu.menuItem(mega_menu_hot_label).setMegaMenu({
+                    label: 'hot',
+                    disabled: true,
+                });
+            {{/if}}
+
+            {{#if theme_settings.mega_menu_sale_label}}
+                haloMegaMenu.menuItem(mega_menu_sale_label).setMegaMenu({
+                    label: 'sale',
+                    disabled: true,
+                });
+            {{/if}}
+        }
+
+        MegaMenuLabel();
+
+        var setItemMegaMenu = SetItemMegaMenu();
+
+        window.onload = setItemMegaMenu;
+    </script>
+{{/if}}

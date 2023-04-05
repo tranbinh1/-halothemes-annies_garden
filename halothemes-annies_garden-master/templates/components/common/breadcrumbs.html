@@ -1,0 +1,37 @@
+<ul class="breadcrumbs">
+    {{#unless theme_settings.hide_breadcrumbs}}
+        {{#each breadcrumbs}}
+            <li class="breadcrumb {{#if @last}}is-active{{/if}}">
+                {{#or @last (if url "==" null)}}
+                    <span class="breadcrumb-label">{{name}}</span>
+                {{else}}
+                    <a href="{{url}}" class="breadcrumb-label">
+                        <span>{{name}}</span>
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg>
+                    </a>
+                {{/or}}
+            </li>
+        {{/each}}
+    {{/unless}}
+</ul>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement":
+    [
+        {{#each breadcrumbs}}
+        {
+            "@type": "ListItem",
+            "position": {{add @index 1}},
+            "item": {
+                "@id": {{{JSONstringify url}}},
+                "name": {{{JSONstringify name}}}
+            }
+        }{{#unless @last}},{{/unless}}
+        {{/each}}
+    ]
+}
+</script>
+

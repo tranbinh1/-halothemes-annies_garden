@@ -1,0 +1,37 @@
+ <div class="item">
+    <div class="card card-custom card-custom3" data-product-id="{{product.id}}">
+        <div class="card-image">
+            <a class="card-link" href="{{product.url}}">
+                <img src="{{getImage product.main_image 'gallery_size'}}" alt="{{product.title}}" title="{{product.title}}">
+            </a>
+        </div>
+        <div class="card-content">
+            <h4 class="card-title">
+                {{#if theme_settings.halo_card_title '==' 'ellipsis'}}
+                    <a href="{{product.url}}" class="card-ellipsis" style="-webkit-box-orient: vertical;">
+                        {{product.title}}
+                    </a>
+                {{else}}
+                    <a href="{{product.url}}">
+                        {{product.title}}
+                    </a>
+                {{/if}}
+            </h4>
+            <div class="card-price" data-test-info-type="price">
+                {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                    {{> components/products/price price=product.price}}
+                {{else}}
+                    {{> components/common/login-for-pricing}}
+                {{/or}}
+            </div>
+            {{#if theme_settings.haloAddOptionForProduct}}
+                <div class="card-option card-option-{{product.id}}">
+                    {{> components/halothemes/halo-add-option-for-product}}
+                </div>
+            {{/if}}
+            <a href="{{product.url}}" class="card-action">
+                <span class="text">{{lang 'products.details_link'}}</span>
+            </a>
+        </div>
+    </div>
+</div>

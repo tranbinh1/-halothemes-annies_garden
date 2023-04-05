@@ -1,0 +1,44 @@
+// =============================================================================
+// FACET SEARCH (CSS)
+// =============================================================================
+
+#facetedSearch{
+    padding: 20px 20px 100px 20px;
+
+    @media (min-width: 1025px){
+        padding: 0;
+    }
+}
+
+.facetedSearch-navList {
+    display: block;
+}
+
+.navList.facetedSearch-optionColumns{
+    margin: 15px 0 0 0;
+
+    .navList-item{
+        width: 100%;
+    }
+
+    @media (min-width: 768px){
+        margin-left: -15px;
+        margin-right: -15px;
+        font-size: 0;
+        left: 0;
+        display: block;
+
+        .navList-item{
+            display: inline-block;
+            vertical-align: top;
+            width: 50%;
+            padding: 0 15px;
+        }
+    }
+
+    @media (min-width: 1025px){
+        .navList-item{
+            width: 33.3333333%;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{{#if theme_settings.home_product_block_special}}
+    <div class="halo-block halo-block-product halo-block-special-product padding-top-10 padding-bottom-50" data-special-product-id="{{id}}" id="halo-special-block">
+        <div class="container">
+            <div class="halo-block-header">
+                <h3 class="title special-title">{{title}}</h3>
+                <span class="desc">{{desc}}</span>
+            </div>
+            <div class="halo-spacial-product">
+                <div class="loadingOverlay"></div>
+            </div>
+        </div>
+    </div>
+    {{{region name="home_below_special_category"}}}
+{{/if}}

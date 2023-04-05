@@ -1,0 +1,33 @@
+{{#with theme_settings}}
+    {{#or show_accept_amex show_accept_discover show_accept_mastercard show_accept_paypal show_accept_visa show_accept_amazonpay show_accept_googlepay show_accept_klarna}}
+    <div class="footer-payment-icons">
+        {{#if show_accept_visa}}
+            <svg class="footer-payment-icon" aria-label="{{lang 'ada.payment.visa'}}"><use xlink:href="#icon-logo-visa"></use></svg>
+        {{/if}}
+        {{#if show_accept_mastercard}}
+            <svg class="footer-payment-icon" aria-label="{{lang 'ada.payment.mastercard'}}"><use xlink:href="#icon-logo-mastercard"></use></svg>
+        {{/if}}
+        {{#if show_accept_amex}}
+            <svg class="footer-payment-icon" aria-label="{{lang 'ada.payment.amex'}}"><use xlink:href="#icon-logo-american-express"></use></svg>
+        {{/if}}
+        {{#if show_accept_discover}}
+            <svg class="footer-payment-icon" aria-label="{{lang 'ada.payment.discover'}}"><use xlink:href="#icon-logo-discover"></use></svg>
+        {{/if}}
+        {{#if show_accept_paypal}}
+            <svg class="footer-payment-icon" aria-label="{{lang 'ada.payment.paypal'}}"><use xlink:href="#icon-logo-paypal"></use></svg>
+        {{/if}}
+        {{#if show_accept_amazonpay}}
+            <svg class="footer-payment-icon amazonpay" aria-label="{{lang 'ada.payment.amazonpay'}}"><use xlink:href="#icon-logo-amazonpay"></use></svg>
+        {{/if}}
+        {{#if show_accept_googlepay}}
+            <svg class="footer-payment-icon googlepay" aria-label="{{lang 'ada.payment.googlepay'}}"><use xlink:href="#icon-logo-googlepay"></use></svg>
+        {{/if}}
+        {{#if show_accept_klarna}}
+            <svg class="footer-payment-icon klarna" aria-label="{{lang 'ada.payment.klarna'}}"><use xlink:href="#icon-logo-klarna"></use></svg>
+        {{/if}}
+        {{#if show_accept_estern_union}}
+            <svg class="footer-payment-icon western-union" aria-label="{{lang 'ada.payment.estern_union'}}"><use xlink:href="#icon-logo-western-union"></use></svg>
+        {{/if}}
+    </div>
+    {{/or}}
+{{/with}}

@@ -1,0 +1,180 @@
+// =============================================================================
+// NAV (CSS)
+// =============================================================================
+
+
+// Citadel inline messages
+// -----------------------------------------------------------------------------
+//
+// 1. Remove the margin-left we add to default lists.
+//
+// -----------------------------------------------------------------------------
+
+.navList,
+.navBar {
+    margin-left: 0; // 1
+}
+
+.navList-action,
+.navBar-action {
+    text-decoration: none;
+}
+
+.navList-action.is-active {
+    font-weight: $navList-action-fontWeight--active;
+}
+
+.account-navigation{
+    .navBar-item{
+        > a{
+            transition: unset;
+        }
+    }
+}
+
+.navBar-action-color--active{
+    color: $color-textLink-active;
+    background-image: linear-gradient(transparent 97%, $color-textLink-active 3%);
+    background-repeat: repeat-x;
+    background-position-y: 0;
+}
+
+
+// NavList action checkbox
+// -----------------------------------------------------------------------------
+//
+// Purpose: Display a checkbox next to an actionable link, without actually using
+// a checkbox element.
+//
+// 1. Position checkbox so it is vertically centered
+//
+// -----------------------------------------------------------------------------
+
+.navList-action--checkbox {
+    @include checkRadioBase();
+    @include checkBox-base();
+
+    &:before,
+    &:after {
+        top: 50%; // 1
+    }
+
+    &:before {
+        margin-top: -$checkRadio-outerSize / 2;
+    }
+
+    &:after {
+        background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='check' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='svg-inline--fa fa-check fa-w-16 fa-3x'%3E%3Cpath fill='%23ffffff' d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' class=''%3E%3C/path%3E%3C/svg%3E");
+        width: 11px;
+        height: 11px;
+        left: 2px;
+        margin-top: -$checkRadio-outerSize / 2 + remCalc(1);
+    }
+
+    &:focus {
+        @include checkRadioBase--focus();
+    }
+
+    &.is-disabled {
+        @include checkRadioBase--disabled();
+    }
+
+    &.is-checked,
+    &.is-selected {
+        color: $header-font-color!important;
+        font-weight: $fontWeight-bold!important;
+        @include checkRadioBase--checked();
+
+        &:before {
+            border-color: $header-font-color!important;
+            background: $header-font-color!important;
+        }
+    }
+
+    @media (min-width: 1025px){
+        &.is-checked,
+        &.is-selected {
+            &:hover{
+                color: $color-textLink-hover!important;
+            }
+        }
+    }
+}
+
+
+// NavList action close
+// -----------------------------------------------------------------------------
+//
+.navList-action-close {
+    background: $navList-action-close-background;
+    border-radius: $navList-action-close-borderRadius;
+    display: inline-block;
+    float: right;
+    line-height: 0;
+    opacity: 0;
+    padding: $navList-action-close-padding;
+    transition: $navList-action-close-transition;
+    visibility: hidden;
+
+    .icon {
+        @include square($navList-action-close-iconSize);
+        fill: stencilColor("color-textLink");
+    }
+
+    .navList-action.is-selected:hover & {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+
+// Page Subnavigation
+// -----------------------------------------------------------------------------
+
+.navBar--sub {
+    margin-bottom: spacing("single") * 3;
+    text-align: center;
+
+    .navBar-section {
+        float: none;
+    }
+
+    .navBar-item {
+        float: none;
+        margin: 0 spacing("half");
+
+        @include breakpoint("medium") {
+            display: inline-block;
+        }
+
+        // scss-lint:disable SelectorDepth, NestingDepth
+        &.is-active {
+            @include breakpoint("medium") {
+                border-bottom: 1px solid stencilColor("color-textBase");
+            }
+
+            > .navBar-action {
+                color: color("greys", "dark");
+            }
+        }
+
+        &.navBar-item--separate {
+            @include breakpoint("medium") {
+                border-left: 1px solid stencilColor("color-textSecondary");
+                margin: 0;
+                padding-left: spacing("half");
+            }
+        }
+    }
+
+    .navBar-action {
+        color: stencilColor("color-textSecondary");
+        font-size: fontSize("base");
+        padding: 0;
+
+        // scss-lint:disable NestingDepth
+        &:hover {
+            color: stencilColor("color-textSecondary--hover");
+        }
+    }
+}

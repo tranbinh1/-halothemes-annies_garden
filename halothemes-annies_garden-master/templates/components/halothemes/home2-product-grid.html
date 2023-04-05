@@ -1,0 +1,20 @@
+<div class="halo-block halo-block-product halo-block-product2 home2-block-recommended padding-top-50 padding-bottom-30">
+	<div class="container">
+		<div class="halo-block-header">
+            <h3 class="title">{{title}}</h3>
+        </div>
+        <ul class="productGrid productGrid--maxCol{{ columns }}" id="{{block_id}}" data-columns="{{ columns }}" data-product-type="{{productType}}" {{#if settings.data_tag_enabled}} data-list-name="{{listName}}" {{/if}}>
+            {{#each (limit products theme_settings.home_product_block-id-limit)}}
+                <li class="product">
+                    {{> components/products/card productsnew=../productsnew settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1)}}
+                </li>
+            {{/each}}
+        </ul>
+        {{#if products.length '>' 1}}
+            <div class="homePGF_btn">
+                <a href="javascirpt:void(0)" class="button button--secondary">{{lang 'common.show_more'}}</a>
+            </div>
+        {{/if}}
+	</div>
+</div>
+{{{region name="home_below_new_products"}}}

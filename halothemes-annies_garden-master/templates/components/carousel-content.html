@@ -1,0 +1,43 @@
+<div class="heroCarousel-content{{#unless show_background}} heroCarousel-content--empty{{/unless}} {{#unless hasBackground '==' 'transparent'}} heroCarousel-content--notEmpty{{/unless}} heroCarousel-content--{{position}}">
+	{{#if subheading}}
+    	<span class="heroCarousel-subtitle animated">{{subheading}}</span>
+    {{/if}}
+    {{#if heading}}
+    	<h2 class="heroCarousel-title animated">{{{heading}}}</h2>
+    {{/if}}
+    {{#if text}}
+    	<p class="heroCarousel-description animated">{{{text}}}</p>
+    {{/if}}
+    {{#or (if customTextLink1) (if customTextLink2) (if customTextLink3)}}
+	    <ul class="heroCarousel-customLink animated">
+	    	{{#if customTextLink1}}              
+	            <li>
+	                <a href="{{customLink1}}"><span>{{customTextLink1}}</span></a>
+	            </li>
+	        {{/if}}
+            {{#if customTextLink2}}              
+	            <li>
+	                <a href="{{customLink2}}"><span>{{customTextLink2}}</span></a>
+	            </li>
+	        {{/if}}
+            {{#if customTextLink3}}              
+	            <li>
+	                <a href="{{customLink3}}"><span>{{customTextLink3}}</span></a>
+	            </li>
+	        {{/if}}               
+	    </ul>
+    {{/or}}
+    {{#if countdown}}
+    	<div class="heroCarousel-countdown animated" data-carousel-countdown="{{countdown}}"></div>
+    {{/if}}
+    {{#or (if button_text) (if customTextBtn)}}
+    	<div class="heroCarousel-action animated">
+		    {{#if button_text}}
+		        <a class="button button--primary{{#if @index '==' 2}} button--large{{/if}}" href="{{url}}">{{button_text}}</a>
+		    {{/if}}
+		    {{#if customTextBtn}}
+		    	<a class=" button button--primary" href="{{customBtn}}">{{customTextBtn}}</a>
+		    {{/if}}
+    	</div>
+	{{/or}}
+</div>

@@ -1,0 +1,36 @@
+{{#or theme_settings.halo-product-security-1 theme_settings.halo-product-security-2 theme_settings.halo-product-security-3 theme_settings.halo-product-security-4 theme_settings.halo-product-security-5 theme_settings.halo-product-security-6}}
+    <div class="productView-securityImage">
+        <ul>
+            {{#if theme_settings.halo-product-security-1}}
+                <li>
+                    <img src="{{cdn 'img/norton.png'}}" alt="Norton Secured">
+                </li>
+            {{/if}}
+            {{#if theme_settings.halo-product-security-2}}
+                <li>
+                    <img src="{{cdn 'img/etrust.png'}}" alt="TRUSTe Verified">
+                </li>
+            {{/if}}
+            {{#if theme_settings.halo-product-security-3}}
+                <li>
+                    <img src="{{cdn 'img/authorized-net.png'}}" alt="Authorized.net">
+                </li>
+            {{/if}}
+            {{#if theme_settings.halo-product-security-4}}
+                <li>
+                    <img src="{{cdn 'img/accredited-business.png'}}" alt="Accredited Business">
+                </li>
+            {{/if}}
+            {{#if theme_settings.halo-product-security-5}}
+                <li>
+                    <img src="{{cdn 'img/visa-verify.png'}}" alt="Verified by Visa" width="86px" height="36px">
+                </li>
+            {{/if}}
+            {{#if theme_settings.halo-product-security-6}}
+                <li>
+                    <img src="{{cdn 'img/master-card-secure.png'}}" alt="Mastercard SecureCode">
+                </li>
+            {{/if}}
+        </ul>
+    </div>
+{{/or}}

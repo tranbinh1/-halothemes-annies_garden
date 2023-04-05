@@ -1,0 +1,49 @@
+<form class="form" action="{{urls.search}}">
+    <fieldset class="form-fieldset">
+        <div class="form-field">
+            {{#if theme_settings.halo-search-category}}
+                <div id="haloSearchCategory">
+                    <label class="is-srOnly" for="search_category_query">{{lang 'header.categories'}}</label>
+                    <select name="category" class="halo-select-category" id="search_category_query">
+                        <option value="" selected="">{{lang 'header.categories'}}</option>
+                        {{#unless page_type '==' 'default'}}
+                            {{#each categories}}
+                                <option value="{{id}}">{{name}}</option>
+                                {{#if children}}
+                                    {{#each children}}
+                                        <option value="{{id}}"><span>---</span> {{name}}</option>
+                                        {{#if children}}
+                                            {{#each children}}
+                                                <option value="{{id}}"><span>------</span> {{name}}</option>
+                                                {{#if children}}
+                                                    {{#each children}}
+                                                        {{#if children}}
+                                                            <option value="{{id}}"><span>---------</span> {{name}}</option>
+                                                        {{else}}
+                                                            <option value="{{id}}"><span>---------</span> {{name}}</option>
+                                                        {{/if}}
+                                                    {{/each}}
+                                                {{/if}}
+                                            {{/each}}
+                                        {{/if}}
+                                    {{/each}}
+                                {{/if}}
+                            {{/each}}
+                        {{/unless}}
+                    </select> 
+                    <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-down" /></svg>
+                </div>
+            {{/if}}
+            <label class="is-srOnly" for="search_query">{{lang "search.quick_search.input_label"}}</label>
+            <input class="form-input" data-search-quick name="search_query" id="search_query" data-error-message="{{lang 'search.error.empty_field'}}" placeholder="{{lang 'search.quick_search.input_placeholder'}}" autocomplete="off">
+            <button type="submit" class="button button--primary" aria-label="{{lang 'search.quick_search.button_search'}}"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-search"></use></svg></button>
+        </div>
+    </fieldset>
+</form>
+<div class="haloQuickSearchResults quickSearchResults" data-bind="html: results"></div>
+{{#if theme_settings.halo-before-quick-results}}
+    <div class="haloQuickSearchResults quickSearchResultsCustom">
+        {{> components/halothemes/halo-before-quick-results productsnew=products.new}}
+    </div>
+{{/if}}
+{{~inject 'quickSearchBefore' theme_settings.halo-before-quick-results}}

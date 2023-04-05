@@ -1,0 +1,46 @@
+// =============================================================================
+// SIDEBAR BLOCKS (CSS)
+// =============================================================================
+
+
+// Block
+// -----------------------------------------------------------------------------
+
+.sidebarBlock {
+	margin: 0 0 30px 0;
+    padding: 0 0 25px 0;
+    border-bottom: 1px solid #c5c5cf;
+
+    &:last-child{
+    	margin-bottom: 0;
+	    padding-bottom: 0;
+	    border-bottom: none;
+    }
+
+    &#featured-products{
+        margin-bottom: 35px;
+        position: relative;
+    }
+
+    &#allCategories{
+    	padding-bottom: 35px;
+    }
+
+    &#advertisement-image{
+    	padding-bottom: 35px;
+    }
+}
+
+.sidebarBlock-heading {
+    font-size: $h4-font-size;
+    font-weight: $fontWeight-normal;
+    margin: 0 0 22px 0;
+    line-height: 1;
+    text-transform: unset;
+
+    .home-layout-2 & {
+        font-weight: $fontWeight-semibold;
+    }
+}
+
+.sidebarBlock-content{}

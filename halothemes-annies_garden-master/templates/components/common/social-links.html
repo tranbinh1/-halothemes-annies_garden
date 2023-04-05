@@ -1,0 +1,49 @@
+<ul class="socialLinks socialLinks--alt">
+	{{#if position '==' 'footer'}}
+        {{#each social_media}}
+            <li class="socialLinks-item socialLinks-item--{{display_name}}">
+                <a class="icon icon--{{display_name}}" href="{{url}}" target="_blank" rel="noopener" title="Open {{{capitalize display_name}}} in a new tab">
+                    <svg aria-hidden="true"><use xlink:href="#icon-{{display_name}}" /></svg>
+                </a>
+            </li>
+        {{/each}}
+        {{#if theme_settings.show_social-links-messenger}}
+        	<li class="socialLinks-item">
+                <a class="icon icon--messenger" href="{{theme_settings.show_social-links-messenger}}" target="_blank" rel="noopener" title="Open Messenger in a new tab">
+                    <svg aria-hidden="true"><use xlink:href="#icon-messenger" /></svg>
+                </a>
+            </li>
+        {{/if}}
+        {{#if theme_settings.show_social-links-snapchat}}
+        	<li class="socialLinks-item">
+                <a class="icon icon--snapchat" href="{{theme_settings.show_social-links-snapchat}}" target="_blank" rel="noopener" title="Open Snapchat in a new tab">
+                    <svg aria-hidden="true"><use xlink:href="#icon-snapchat" /></svg>
+                </a>
+            </li>
+        {{/if}}
+	{{/if}}
+	{{#if position '==' 'newsletter'}}
+		{{#each social_media}}
+            <li class="socialLinks-item">
+                <a class="icon icon--{{display_name}}2" href="{{url}}" target="_blank" rel="noopener" title="Open {{{capitalize display_name}}} in a new tab">
+                    <svg aria-hidden="true"><use xlink:href="#icon-{{display_name}}2" /></svg>
+                </a>
+            </li>
+        {{/each}}
+        {{#if theme_settings.show_social-links-messenger}}
+        	<li class="socialLinks-item">
+                <a class="icon icon--messenger2" href="{{theme_settings.show_social-links-messenger}}" target="_blank" rel="noopener" title="Open Messenger in a new tab">
+                    <svg aria-hidden="true"><use xlink:href="#icon-messenger2" /></svg>
+                </a>
+            </li>
+        {{/if}}
+        {{#if theme_settings.show_social-links-snapchat}}
+        	<li class="socialLinks-item">
+                <a class="icon icon--snapchat2" href="{{theme_settings.show_social-links-snapchat}}" target="_blank" rel="noopener" title="Open Snapchat in a new tab">
+                    <svg aria-hidden="true"><use xlink:href="#icon-snapchat2" /></svg>
+                </a>
+            </li>
+        {{/if}}
+	{{/if}}
+</ul>
+

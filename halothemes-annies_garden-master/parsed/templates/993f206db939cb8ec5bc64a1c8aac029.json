@@ -1,0 +1,3 @@
+{
+  "components/halothemes/halo-recently-bought-product": "{{#if theme_settings.haloRecentlyBought}}\n\t<div id=\"halo-recently-bought-popup\" class=\"halo-popup halo-recently-bought-popup\">\n\t\t<div class=\"hide halo-recently-bought-list\" id=\"halo-recently-bought-list\"></div>\n\t</div>\n{{/if}}\n"
+}

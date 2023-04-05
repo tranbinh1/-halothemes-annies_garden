@@ -1,0 +1,18 @@
+{{#if theme_settings.portfolio_product_block}}
+	<div id="halo-portfolio-product" class="halo-block halo-block-product halo-block-product2"  data-portfolio-id="{{theme_settings.portfolio_product_block-id}}">
+		<div class="container">
+			{{#if theme_settings.portfolio_product_block-title}}
+				<div class="halo-block-header">
+			        <h3 class="title">{{theme_settings.portfolio_product_block-title}}</h3>
+			    </div>
+			{{/if}}
+			{{#if theme_settings.portfolio_product_block '==' 'Featured'}}
+	            {{> components/products/carousel products=products.featured productsnew=products.new}}
+	        {{else if theme_settings.portfolio_product_block '==' 'New'}}
+	            {{> components/products/carousel products=products.new productsnew=products.new}}
+	        {{else if theme_settings.portfolio_product_block '==' 'Top'}}
+	            {{> components/products/carousel products=products.top_sellers productsnew=products.new}}
+	        {{/if}}
+		</div>
+	</div>
+{{/if}}

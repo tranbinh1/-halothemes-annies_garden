@@ -1,0 +1,94 @@
+// =============================================================================
+// WRITE A REVIEW (CSS)
+// =============================================================================
+
+.writeReview-productDetails {
+    text-align: center;
+
+    .product-brand {
+        font-family: $fontFamily-sans;
+        font-size: $fontSize-root - 2px;
+        font-weight: $fontWeight-normal;
+        color: $color-textSecondary;
+        line-height: 28px;
+        margin: 15px 0 0 0;
+
+        + .product-title{
+            margin-top: 0;
+        }
+    }
+
+    .product-title {
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-normal;
+        text-transform: capitalize;
+        line-height: 1.625;
+        margin-bottom: 0;
+        margin-top: 15px;
+    }
+
+    @media (min-width: 768px) {
+        @include grid-column(6);
+        padding-right: 15px;
+        margin-top: 10px;
+    }
+}
+
+
+.writeReview-form {
+    margin-top: 30px;
+
+    .form-label{
+        line-height: 25px;
+
+        small{
+            font-size: $fontSize-root - 2px;
+            font-weight: $fontWeight-normal;
+            font-style: italic;
+            line-height: 25px;
+            margin-top: 0;
+            text-transform: capitalize;
+        }
+    }
+
+    .form-select{
+        color: $color-textBase;
+        height: 50px;
+    }
+
+    .form-input{
+        height: 50px;
+
+        &[rows]{
+            height: 135px;
+        }
+    }
+
+    .button{
+        min-width: 207px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    @media (min-width: 768px) {
+        position: relative;
+        top: -5px;
+        margin-top: 10px;
+        @include grid-column(6);
+        padding-left: 15px;
+    }
+}
+
+.writeReview-productImage-container {
+    position: relative;
+
+    img {
+        @include lazy-loaded-img;
+        height: 100%;
+        object-fit: contain;
+        /* Object-fit polyfill */
+        font-family: 'object-fit: contain;';
+    }
+
+    @include lazy-loaded-padding('product_size');
+}

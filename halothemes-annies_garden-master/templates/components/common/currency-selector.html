@@ -1,0 +1,28 @@
+<a href="#" class="navPages-action navPages-action-depth-max has-subMenu is-root">
+    <span class="flag">{{{currency_selector.active_currency_flag}}}</span> 
+    <span class="text">
+        {{currency_selector.active_currency_code}}
+    </span>
+    <span class="navPages-action-moreIcon" aria-hidden="true">
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-chevron-down" /></svg>
+    </span>
+</a>
+<div class="navPage-subMenu navPage-subMenu-horizontal">
+    <ul class="navPage-subMenu-list">
+        <li class="navPage-subMenu-item-child navPage-subMenu-title">
+            <p class="navPage-subMenu-action navPages-action">
+                <span class="text">
+                    Currency
+                </span>
+            </p>
+        </li>
+        {{#each currency_selector.currencies}}
+            <li class="navPage-subMenu-item-child navPages-action-end">
+                <a class="navPage-subMenu-action navPages-action{{#if is_active}} navPages-action-active{{/if}}" href="{{{switch_url}}}">
+                    <span class="flag">{{{flag}}}</span>
+                    <span class="text">{{code}}</span>
+                </a>
+            </li>
+        {{/each}}
+    </ul>
+</div>

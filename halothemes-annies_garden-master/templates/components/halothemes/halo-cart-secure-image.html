@@ -1,0 +1,39 @@
+{{#or theme_settings.halo-secure-image-label theme_settings.halo-cart-secure-1 theme_settings.halo-cart-secure-2 theme_settings.halo-cart-secure-3 theme_settings.halo-cart-secure-4 theme_settings.halo-cart-secure-5 theme_settings.halo-cart-secure-6}}
+	<div class="cart-secure-image">
+		{{#if theme_settings.halo-secure-image-label}}
+		    <div class="secure-image-label">
+		        <span>{{theme_settings.halo-secure-image-label}}</span>
+		    </div>
+		{{/if}}
+		{{#if theme_settings.halo-cart-secure-1}}
+		    <div class="secure-image">
+		        <img src="{{cdn 'img/norton.png'}}" alt="Norton Secured">
+		    </div>
+		{{/if}}
+		{{#if theme_settings.halo-cart-secure-2}}
+		    <div class="secure-image">
+		        <img src="{{cdn 'img/etrust.png'}}" alt="TRUSTe Verified">
+		    </div>
+		{{/if}}
+		{{#if theme_settings.halo-cart-secure-3}}
+		    <div class="secure-image">
+		        <img src="{{cdn 'img/authorized-net.png'}}" alt="Authorized.net">
+		    </div>
+		{{/if}}
+		{{#if theme_settings.halo-cart-secure-4}}
+		    <div class="secure-image">
+		        <img src="{{cdn 'img/accredited-business.png'}}" alt="Accredited Business">
+		    </div>
+		{{/if}}
+		{{#if theme_settings.halo-cart-secure-5}}
+		    <div class="secure-image">
+		        <img src="{{cdn 'img/visa-verify.png'}}" alt="Verified by Visa" width="86px" height="36px">
+		    </div>
+		{{/if}}
+		{{#if theme_settings.halo-cart-secure-6}}
+		    <div class="secure-image">
+		        <img src="{{cdn 'img/master-card-secure.png'}}" alt="Mastercard SecureCode">
+		    </div>
+		{{/if}}
+	</div>
+{{/or}}

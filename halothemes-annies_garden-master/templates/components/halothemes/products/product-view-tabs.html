@@ -1,0 +1,53 @@
+{{#if theme_settings.halo-productView-tabs}}
+	<div class="productView-tabs halo-block" id="halo-productView-tabs" data-tabs-background="{{#if theme_settings.halo-productView-tabs-background}}https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.halo-productView-tabs-background}}{{/if}}">
+		<div{{#if theme_settings.halo-productView-tabs-background}} class="productView-tabs-image" style="background-image: url(https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.halo-productView-tabs-background}})"{{else}} class="productView-tabs-image noImage"{{/if}}>&nbsp;</div>
+		<div class="productView-tab">
+			{{#if theme_settings.halo-productView-tabs-title}}
+				<div class="productView-tab-header">
+					<h2 class="title">{{theme_settings.halo-productView-tabs-title}}</h2>
+				</div>
+			{{/if}}
+			<ul class="tabs" data-tab>
+				{{#if theme_settings.halo-productView-tabs-1-title}}
+				    <li class="tab is-active">
+				        <a class="tab-title" href="#tab-1" data-tab-id="tab-1">{{theme_settings.halo-productView-tabs-1-title}}</a>
+				    </li>
+			    {{/if}}
+			    {{#if theme_settings.halo-productView-tabs-2-title}}
+			        <li class="tab productView-tab-2{{#unless theme_settings.halo-productView-tabs-1-title}} is-active{{/unless}}">
+			            <a class="tab-title" href="#tab-2" data-tab-id="tab-2">{{theme_settings.halo-productView-tabs-2-title}}</a>
+			        </li>
+			    {{/if}}
+			</ul>
+			<div class="tabs-contents">
+				<div class="loadingOverlay"></div>
+				{{#if theme_settings.halo-productView-tabs-1-title}}
+				    <div class="tab-content is-active" id="tab-1">
+				      	<div class="toggle-title">
+				          	<a class="toggleLink is-open" data-collapsible href="#tab-1-mobile">
+				             	<span>{{theme_settings.halo-productView-tabs-1-title}}</span>
+				            	<span class="icon-plus">&nbsp;</span>
+				          	</a>
+				      	</div>
+				      	<div class="toggle-content is-open" id="tab-1-mobile">
+				      		<div class="loadingOverlay"></div>
+				      	</div>
+				    </div>
+				{{/if}}
+			    {{#if theme_settings.halo-productView-tabs-2-title}}
+				    <div class="tab-content{{#unless theme_settings.halo-productView-tabs-1-title}} is-active{{/unless}}" id="tab-2">
+				      	<div class="toggle-title">
+				        	<a class="toggleLink productView-tab-2" data-collapsible href="#tab-2-mobile">
+				            	<span>{{theme_settings.halo-productView-tabs-2-title}}</span>
+				            	<span class="icon-plus">&nbsp;</span>
+				          	</a>
+				      	</div>
+				      	<div class="toggle-content" id="tab-2-mobile">
+				      		<div class="loadingOverlay"></div>
+				      	</div>
+				    </div>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+{{/if}}

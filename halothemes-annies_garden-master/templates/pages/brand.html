@@ -1,0 +1,85 @@
+---
+brand:
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+products:
+    featured:
+        limit: {{theme_settings.sidebar_products_per_page}}
+    new:
+        limit: 25
+    top_sellers:
+        limit: {{theme_settings.sidebar_products_per_page}}
+---
+{{inject "brandProductsPerPage" theme_settings.categorypage_products_per_page}}
+
+{{#partial "head"}}
+    {{#if pagination.brand.previous}}
+        <link rel="prev" href="{{pagination.brand.previous}}">
+    {{/if}}
+    {{#if pagination.brand.next}}
+        <link rel="next" href="{{pagination.brand.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+
+{{#if banners.top}}
+    <div class="page-listing-header">
+        {{{limit banners.top 1}}}
+    </div>
+{{/if}}
+
+<div class="container">
+    <div class="breadcrumb-wrapper">
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+    </div>
+
+    <div class="page page-brand page-listing">
+        <div class="page-header">
+            <h1 class="page-heading">{{brand.name}}</h1>
+            {{{region name="brand_below_header"}}}
+        </div>
+
+        {{#if theme_settings.halo-brand-sidebar}}
+            <aside class="page-sidebar" id="faceted-search-container">
+                <div class="page-sidebar-close">
+                    <a href="#" class="close">
+                        <span class="icon">×</span>
+                        <span class="text">{{lang 'common.close'}}</span>
+                    </a>
+                </div>
+                {{> components/brand/sidebar}}
+            </aside>
+        {{/if}}
+
+        <main class="page-content" id="product-listing-container">
+            <div class="halo-toolbar">
+                {{#if theme_settings.halo-brand-sidebar}}
+                    <div class="page-sidebar-mobile-wrapper">
+                        <div class="page-sidebar-mobile">
+                            <span class="text">{{lang 'common.sidebar'}}</span>
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-sidebar"></use></svg>
+                        </div>
+                    </div>
+                {{/if}}
+                {{#if brand.products}}
+                    {{> components/halothemes/gallery/halo-toolbar sort=pagination.brand.sort}}
+                {{/if}}
+            </div>
+            {{#if brand.products}}
+                {{> components/brand/product-listing productsnew=products.new show_compare=brand.show_compare}}
+            {{else}}
+                <p class="page-no-products">{{lang 'brands.no_products'}}</p>
+            {{/if}}
+            {{{region name="brand_below_content"}}}
+        </main>
+    </div>
+</div>
+
+{{#if banners.bottom}}
+    <div class="page-listing-footer">
+        {{{limit banners.bottom 1}}}
+    </div>
+{{/if}}
+{{/partial}}
+{{> layout/base}}

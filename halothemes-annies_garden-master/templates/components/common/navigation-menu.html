@@ -1,0 +1,37 @@
+<nav class="navPages{{#if currency_selector.currencies.length '>' 1}} has-currency{{/if}}" role="navigation" aria-label="Main Navigation">
+    <ul class="navPages-list{{#if theme_settings.haloMegamenu}} navPages-list-megamenu{{/if}}" {{#if theme_settings.haloMenuResize}} id="halo-navigation-list"{{/if}}>
+        {{#each categories}}
+            <li class="navPages-item{{#if children}} has-dropdown{{/if}}">
+                {{> components/common/navigation-list-alternate}}
+            </li>
+        {{/each}}
+        {{#unless theme_settings.hide_content_navigation}}
+            {{#each pages}}
+                 <li class="navPages-item navPages-item-page{{#if children}} has-dropdown{{/if}}">
+                    {{> components/common/navigation-list-alternate}}
+                 </li>
+            {{/each}}
+        {{/unless}}
+        {{#if theme_settings.haloMenuResize}}
+            <li class="navPages-item navPages-item-toggle u-hiddenVisually">
+                <p class="navPages-action has-subMenu is-root">
+                    <span class="text">
+                        <svg><use xlink:href="#icon-more"></use></svg>
+                    </span>
+                </p>
+                <div class="navPage-subMenu navPage-subMenu-horizontal" aria-hidden="true" tabindex="-1">
+                    <ul class="navPage-subMenu-list" id="halo-navPages-dropdown" data-dropdown-menu-content></ul>
+                </div>
+            </li>
+        {{/if}}
+    </ul>
+</nav>
+{{#if currency_selector.currencies.length '>' 1}}
+    <div class="navPages-currency">
+        <ul class="navPages-list navPages-list--user">
+            <li class="navPages-item navPages-item-user">
+                {{> components/common/currency-selector}}
+            </li>
+        </ul>
+    </div>
+{{/if}}

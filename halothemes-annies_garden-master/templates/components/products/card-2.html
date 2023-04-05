@@ -1,0 +1,37 @@
+<article class="card">
+    <figure class="card-figure">
+        <a class="card-link" href="{{url}}">
+            <div class="card-img-container">
+                {{> components/common/responsive-img
+                    image=image
+                    class="card-image"
+                    fallback_size=theme_settings.productgallery_size
+                    lazyload=theme_settings.lazyload_mode
+                    default_image=theme_settings.default_image_product
+                }}
+            </div>
+        </a>
+    </figure>
+    <div class="card-body">
+        {{#if brand.name}}
+            <p class="card-brand" data-test-info-type="brandName">{{brand.name}}</p>
+        {{/if}}
+        <h4 class="card-title">
+            <a href="{{url}}">{{name}}</a>
+        </h4>
+        <div class="price-wrapper">
+            <div class="card-price" data-test-info-type="price">
+                {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                    {{> components/products/price price=price}}
+                {{else}}
+                    {{> components/common/login-for-pricing}}
+                {{/or}}
+            </div>
+        </div>
+        <p class="card-rating" data-test-info-type="productRating">
+            <span class="rating--small">
+                {{> components/products/ratings rating=rating}}
+            </span>
+        </p>
+    </div>
+</article>

@@ -1,0 +1,32 @@
+<div class="card card-custom" data-product-id="{{id}}">
+    <div class="card-image">
+        <a class="card-link" href="{{url}}">
+            {{> components/common/responsive-img
+                image=image
+                fallback_size=theme_settings.productgallery_size
+                lazyload=theme_settings.lazyload_mode
+                default_image=theme_settings.default_image_product
+            }}
+        </a>
+    </div>
+    <div class="card-content">
+        <h4 class="card-title">
+            <a href="{{url}}">{{name}}</a>
+        </h4>
+        <div class="card-price" data-test-info-type="price">
+            {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                {{> components/products/price price=price}}
+            {{else}}
+                {{> components/common/login-for-pricing}}
+            {{/or}}
+        </div>
+        {{#if theme_settings.haloAddOptionForProduct}}
+            <div class="card-option card-option-{{id}}">
+                <div class="form-field"></div>
+            </div>
+        {{/if}}
+        <a href="{{url}}" class="card-action">
+            <span class="text">{{lang 'products.details_link'}}</span>
+        </a>
+    </div>
+</div>

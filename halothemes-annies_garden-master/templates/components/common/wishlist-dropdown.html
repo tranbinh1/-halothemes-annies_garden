@@ -1,0 +1,23 @@
+<form action="{{product.add_to_wishlist_url}}" class="form form-wishlist{{#unless product.out_of_stock}}{{#if theme_settings.halo_buy_it_now}} form-wishlist-custom{{/if}}{{/unless}}" data-wishlist-add method="post">
+    <a aria-controls="wishlist-dropdown-{{product.id}}" aria-expanded="false" class="dropdown-menu-button" data-dropdown="wishlist-dropdown-{{product.id}}" href="#" aria-label="Add to Wishlist">
+        <span class="text">Add to Wishlist</span>
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-heart"></use></svg>
+    </a>
+    <ul aria-hidden="true" class="dropdown-menu" data-dropdown-content id="wishlist-dropdown-{{product.id}}" tabindex="-1">
+        {{#if customer.wishlists}} 
+            {{#each customer.wishlists}}
+            <li>
+                <input class="button {{#if this.num_items '!==' '0'}}button--has-items{{/if}}" formaction="{{this.add_url}}&product_id={{../product.id}}"
+                    type="submit" value="{{this.name}}">
+            </li>
+            {{/each}} 
+        {{else}}
+            <li>
+                <input class="button" type="submit" value="{{lang 'account.wishlists.add_to_default'}}">
+            </li>
+        {{/if}}
+        <li>
+            <a data-wishlist class="button" href="/wishlist.php?action=addwishlist&product_id={{product.id}}">{{lang 'account.wishlists.create_new'}}</a>
+        </li>
+    </ul>
+</form>

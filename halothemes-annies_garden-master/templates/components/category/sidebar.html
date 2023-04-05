@@ -1,0 +1,20 @@
+<nav role="navigation" aria-label="Left Sidebar">
+    {{#if category.faceted_search_enabled}}
+        {{> components/faceted-search/index category}}
+    {{else}}
+        {{> components/halothemes/sidebar/all-categories breadcrumbs=breadcrumbs}}
+        {{> components/category/shop-by-price shop_by_price=category.shop_by_price category_url=category.url}}
+        {{#if shop_by_brand}}
+            {{> components/halothemes/sidebar/shop-by-brand}}
+        {{/if}}
+        {{#if theme_settings.halo-sidebar-products '==' 'Featured'}}
+            {{> components/halothemes/sidebar/product-sidebar products=products.featured title=theme_settings.halo-sidebar-products-title}}
+        {{else if theme_settings.halo-sidebar-products '==' 'New'}}
+            {{> components/halothemes/sidebar/product-sidebar products=products.new title=theme_settings.halo-sidebar-products-title}}
+        {{else if theme_settings.halo-sidebar-products '==' 'Top'}}
+            {{> components/halothemes/sidebar/product-sidebar products=products.top_sellers title=theme_settings.halo-sidebar-products-title}}
+        {{/if}}
+        {{> components/halothemes/sidebar/advertisement-image}}
+        {{> components/halothemes/sidebar/advertisement-content}}
+    {{/if}}
+</nav>

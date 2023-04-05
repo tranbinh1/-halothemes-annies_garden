@@ -1,0 +1,64 @@
+{{#if theme_settings.halo_recent_post}}
+	<div class="halo-block halo-block-post padding-top-40 padding-bottom-20">
+		<div class="container">
+			{{#if theme_settings.halo_recent_post-title}}
+				<div class="halo-block-header">
+		            <h2 class="title">{{theme_settings.halo_recent_post-title}}</h2>
+		            {{#if theme_settings.halo_homepage_layout_2}}
+		            	<p class="decs">{{theme_settings.halo_recent_post-decs}}</p>
+		            {{/if}}
+		        </div>
+		    {{/if}}
+	        <div class="halo-recent-post halo-row" 
+	        	data-slick='{
+	                "dots": false,
+	                "arrows": true,
+	                "infinite": false,
+	                "adaptiveHeight": true,
+	                "slidesToShow": 3,
+	                "slidesToScroll": 1,
+	                "nextArrow": "<svg class=&apos;slick-next slick-arrow&apos; aria-label=&apos;Next Slide&apos;><use xlink:href=&apos;#slick-arrow-next&apos;></use></svg>", 
+            		"prevArrow": "<svg class=&apos;slick-prev slick-arrow&apos; aria-label=&apos;Previous Slide&apos;><use xlink:href=&apos;#slick-arrow-prev&apos;></use></svg>"
+                	}'
+                >
+        		{{#each post}}
+	        		<div class="halo-row-slider">
+	        			<div class="halo-row-item">
+			        		<div class="item">
+					            <div class="item-image">
+					                <a href="{{url}}">
+					                    {{> components/common/responsive-img
+						                    image=thumbnail
+						                    class=""
+						                    fallback_size=../theme_settings.recent_blog_size
+						                    lazyload=../theme_settings.lazyload_mode
+						                    default_image=../theme_settings.default_image_product
+						                }}
+					                </a>
+					            </div>
+						        <div class="item-content">
+						            <h3 class="title">
+						                <a href="{{url}}" style="-webkit-box-orient: vertical;">{{title}}</a>
+						            </h3>
+						            <p class="date">{{#if author}}{{lang 'blog.posted_by' name=author}} on {{/if}}{{date_published}}</p>
+						            <div class="summary">
+						                {{{summary}}}&hellip;
+						            </div>
+						            {{#if show_read_more}}
+				                        <a href="{{url}}" class="link"><span>{{lang 'blog.read_more'}}</span></a>
+				                    {{/if}}
+						        </div>
+						    </div>
+						</div>
+					</div>
+				{{/each}}
+	        </div>
+	        {{#if theme_settings.halo_recent_post-btn}}
+        		<div class="halo-block-footer">
+        			<a href="{{theme_settings.halo_recent_post-link}}" class="link">{{theme_settings.halo_recent_post-btn}}</a>
+        		</div>
+        	{{/if}}
+		</div>
+	</div>
+	{{{region name="home_below_recent_posts"}}}
+{{/if}}

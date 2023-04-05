@@ -1,0 +1,48 @@
+<div class="halo-sidebar halo-menu-mobile halo-sidebar-left{{#if theme_settings.haloMegamenu}} halo-menu-megamenu{{/if}}" id="halo-menu-mobile">
+    <a href="#" class="halo-sidebar-close" aria-label="Close Menu Sidebar">
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-close"></use></svg>
+    </a>
+    <div class="halo-sidebar-wrapper navPages-container" data-menu>
+        {{> components/common/navigation-mobile }}
+    </div>
+</div>
+
+<div class="halo-sidebar halo-search-mobile halo-sidebar-left" id="halo-search-mobile">
+    <a href="#" class="halo-sidebar-close" aria-label="Close Search Sidebar">
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-close"></use></svg>
+    </a>
+    <div class="halo-sidebar-wrapper"></div>
+</div>
+
+{{#if page_type '!=' 'login'}}
+    <div class="halo-sidebar halo-auth-sidebar halo-sidebar-right" id="{{#if customer}}halo-account-mobile{{else}}halo-login-mobile{{/if}}">
+        <a href="#" class="halo-sidebar-close" aria-label="Close Account Sidebar">
+            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-close"></use></svg>
+        </a>
+        <div class="halo-sidebar-wrapper">
+            {{#if customer}}
+                {{> components/halothemes/halo-account-popup data="account-mb"}}
+            {{else}}
+                {{> components/halothemes/halo-login-popup data="login-mb" email_id="login_email2" password_id="login_pass2"}}
+            {{/if}}
+        </div>
+    </div>
+{{/if}}
+
+<div class="halo-sidebar halo-cart-sidebar halo-sidebar-right" id="halo-cart-sidebar">
+    <a href="#" class="halo-sidebar-close" aria-label="Close Cart Sidebar">
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-close"></use></svg>
+    </a>
+    <div class="halo-sidebar-wrapper"></div>
+</div>
+
+{{#if theme_settings.halobeforeyouleave}}
+    <div class="halo-sidebar halo-leave-sidebar halo-sidebar-right" id="halo-before-you-leave" data-time="{{multiply theme_settings.halo-before-you-leave-time 60000}}">
+        <a href="#" class="halo-sidebar-close" aria-label="Close Before You Leave Popup">
+            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-close"></use></svg>
+        </a>
+        <div class="halo-sidebar-wrapper">
+            {{> components/halothemes/halo-before-you-leave}}
+        </div>
+    </div>
+{{/if}}

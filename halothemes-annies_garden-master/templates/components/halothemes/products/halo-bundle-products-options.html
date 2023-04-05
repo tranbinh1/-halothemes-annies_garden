@@ -1,0 +1,25 @@
+{{#if product.options}}
+    {{#unless product.out_of_stock_message }}
+        <a class="halo-toggle-options" href="#">
+            <span>{{lang 'products.choose_options'}}</span>
+        </a>
+        <div class="halo-detail-options" data-fbt-option-change>
+            <a href="#" class="halo-option-close" aria-label="Close" role="button">
+                <svg class="icon"><use xlink:href="#icon-close"></use></svg>
+            </a>
+            {{#each product.options}}
+                {{{dynamicComponent 'components/halothemes/options'}}}
+            {{/each}}
+            <div class="productAttributes-message">
+                <p class="alertBox-message"></p>
+            </div>
+            {{#if theme_settings.halo_stock_level}}
+                <div class="productView-optionsStock u-hiddenVisually">
+                    <span>{{lang 'products.stock_hurry_up'}}</span>
+                    <span data-stock-left></span>
+                    <span>{{lang 'products.stock_left'}}</span>
+                </div>
+            {{/if}}
+        </div>
+    {{/unless}}
+{{/if}}

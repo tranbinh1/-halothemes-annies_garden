@@ -1,0 +1,61 @@
+---
+product:
+    videos:
+        limit: {{theme_settings.productpage_videos_count}}
+    reviews:
+        limit: {{theme_settings.productpage_reviews_count}}
+    related_products:
+        limit: {{theme_settings.productpage_products_count}}
+    similar_by_views:
+        limit: {{theme_settings.productpage_products_count}}
+products:
+    featured:
+        limit: {{theme_settings.sidebar_products_per_page}}
+    new:
+        limit: 25
+    top_sellers:
+        limit: {{theme_settings.sidebar_products_per_page}}
+---
+{{inject "productId" product.id}}
+
+{{#partial "page"}}
+<div class="page page-product">
+    <div class="product-view-top">
+        <div class="container">
+            {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+            {{#each product.shipping_messages}}
+                {{> components/common/alert-info message}}
+            {{/each}}
+
+            {{> components/products/product-view productsnew=products.new}}
+            
+            {{{region name="product_below_content"}}}
+        </div>
+    </div>
+    <div class="product-view-bottom">
+        {{> components/halothemes/products/halo-bundle-products}}
+
+        {{> components/halothemes/products/product-view-more}}
+
+        {{#if theme_settings.productpage_product_block-1 '==' 'Related'}}
+            {{> components/products/related products=product.related_products productsnew=products.new title=theme_settings.productpage_product_block-1-title block_id="halo-product-block-1"}}
+        {{else if theme_settings.productpage_product_block-1 '==' 'Customers'}}
+            {{> components/products/similar-by-view products=product.similar_by_views productsnew=products.new title=theme_settings.productpage_product_block-1-title block_id="halo-product-block-1"}}
+        {{/if}}
+
+        {{> components/halothemes/products/product-view-more-2}}
+
+        {{#if theme_settings.productpage_product_block-2 '==' 'Related'}}
+            {{> components/products/related products=product.related_products productsnew=products.new title=theme_settings.productpage_product_block-2-title block_id="halo-product-block-2"}}
+        {{else if theme_settings.productpage_product_block-2 '==' 'Customers'}}
+            {{> components/products/similar-by-view products=product.similar_by_views productsnew=products.new title=theme_settings.productpage_product_block-2-title block_id="halo-product-block-2"}}
+        {{/if}}
+    </div>
+    {{> components/halothemes/home/home-icon-with-text}}
+</div>
+
+{{> components/products/schema}}
+
+{{/partial}}
+{{> layout/base}}

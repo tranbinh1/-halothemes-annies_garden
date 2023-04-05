@@ -1,0 +1,58 @@
+<div class="halo-paginator">
+	{{#if page_type '==' 'category'}}
+		{{#if theme_settings.halo-product-show-more}}
+			<div class="halo-product-show-more" id="listing-showmoreBtn">
+		        {{#if pagination.category.next}}
+		    	    <a class="button button--transparent" data-href="#">
+		    	        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-refresh"></use></svg>
+		    	        <span class="text">{{lang 'search.faceted.show-more'}}</span>
+		    	    </a>
+		        {{else}}
+		            <a class="button button--transparent disable" data-href="#">
+		                <span class="text">{{lang 'common.no_more_products'}}</span>
+		            </a>
+		        {{/if}}
+			</div> 
+		{{/if}}
+
+		{{> components/common/paginator pagination.category total=category.total_products page_type=page_type}}
+	{{/if}}
+
+	{{#if page_type '==' 'brand'}}
+		{{#if theme_settings.halo-product-show-more}}
+			<div class="halo-product-show-more" id="listing-showmoreBtn">
+		        {{#if pagination.brand.next}}
+		    	    <a class="button button--transparent" data-href="#">
+		    	        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-refresh"></use></svg>
+		    	        <span class="text">{{lang 'search.faceted.show-more'}}</span>
+		    	    </a>
+		        {{else}}
+		            <a class="button button--transparent disable" data-href="#">
+		                <span class="text">{{lang 'common.no_more_products'}}</span>
+		            </a>
+		        {{/if}}
+			</div> 
+		{{/if}}
+
+		{{> components/common/paginator pagination.brand page_type=page_type brand=brand shop_by_brand=shop_by_brand}}
+	{{/if}}
+
+	{{#if page_type '==' 'search'}}
+		{{#if theme_settings.halo-product-show-more}}
+		    <div class="halo-product-show-more" id="listing-showmoreBtn">
+		        {{#if pagination.product_results.next}}
+		            <a class="button button--transparent" data-href="#">
+		                <svg class="icon" aria-hidden="true"><use xlink:href="#icon-refresh"></use></svg>
+		                <span class="text">{{lang 'search.faceted.show-more'}}</span>
+		            </a>
+		        {{else}}
+		            <a class="button button--transparent disable" data-href="#">
+		                <span class="text">{{lang 'common.no_more_products'}}</span>
+		            </a>
+		        {{/if}}
+		    </div> 
+		{{/if}}
+
+		{{> components/common/paginator pagination.product_results total=pagination.product_results.total page_type=page_type}}
+	{{/if}}
+</div>

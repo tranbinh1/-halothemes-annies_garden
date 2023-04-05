@@ -1,0 +1,124 @@
+// =============================================================================
+// QUICK VIEW (CSS)
+// =============================================================================
+
+.quickView {
+    @include clearfix();
+
+    .productView--quickView{
+        padding-top: 0;
+    }
+
+    .halo-productView-left {
+    	display: flex;
+        width: 100%;
+    }
+
+    .halo-productView-right{
+        width: 100%;
+
+    	.productView-details{
+    		width: 100%;
+    	}
+    }
+
+    .productView-image-wrapper{
+    	width: calc(100% - 95px);
+    }
+
+    .productView-thumbnail-wrapper{
+    	order: -1;
+    	width: 100px;
+    	padding: 0 30px 0 0;
+    	margin-top: 0;
+
+    	.productView-for{
+    		padding-left: 0;
+    		padding-right: 0;
+    		margin-top: -6px;
+
+            &:not(.slick-slider){
+                white-space: unset;
+                overflow: unset;
+
+                > div{
+                    width: 100%;
+                }
+            }
+        }
+
+        .slick-arrow{
+            &.slick-prev{
+                left: 25px;
+                top: -43px;
+                transform: rotate(90deg);
+            }
+
+            &.slick-next{
+                right: unset;
+                top: auto;
+                bottom: -43px;
+                left: 25px;
+                transform: rotate(90deg);
+            }
+        }
+
+        &.arrows-visible{
+            display: flex;
+            align-items: center;
+
+            .productView-for{
+                margin-top: 0;
+            }
+        }
+    }
+
+    .productView-thumbnail{
+    	padding: 6px 0;
+
+    	.productView-thumbnail-link{
+    		&:after{
+    			padding-bottom: 122%;
+    		}
+    	}
+    }
+
+    .productView-countDown{
+        .num{
+            color: $color-textBase;
+        }
+    }
+
+    .productView-bottomInfo{
+    	.productView-shortDesc{
+    		overflow: hidden;
+		    display: -webkit-box;
+		    -webkit-line-clamp: 2;
+		    text-overflow: ellipsis;
+    	}
+    }
+
+    [data-product-attribute]{
+        .form-option{ 
+            .form-option-expanded{
+                display: none;
+            }
+
+            &:hover{
+                .form-option-expanded{
+                    display: block;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 992px){
+        .halo-productView-left {
+            width: calc(100% - 490px)
+        }
+
+        .halo-productView-right{
+            width: 490px;
+        }
+    }
+}

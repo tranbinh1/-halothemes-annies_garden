@@ -1,0 +1,3 @@
+{
+  "components/halothemes/products/halo-recently-bought-product-tmp": "<a href=\"{{product.url}}\" class=\"card-link\">\n    <img class=\"lazyload\" src=\"{{cdn 'img/loading.svg'}}\" data-src=\"{{getImage product.main_image 'productgallery_size' (cdn theme_settings.default_image_product)}}\" alt=\"{{product.title}}\" title=\"{{ellipsis product.title 50}}\">\n    </div>\n</a>\n"
+}

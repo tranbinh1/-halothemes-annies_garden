@@ -1,0 +1,52 @@
+{{#if theme_settings.halo_newsletter_popup}}
+    <div id="halo-newsletter-popup" class="hide">
+        <div class="newsletter-popup-container{{#if theme_settings.halo_newsletter_popup_image}} hasImage {{else}} noImage{{/if}}">
+            <div class="newsletter-popup-inner">
+                <button type="button" data-close-newsletter-popup aria-label="Close Newsletter Popup">
+                    <svg class="icon" aria-hidden="true"><use xlink:href="#icon-close"></use></svg>
+                </button>
+                {{#if theme_settings.halo_newsletter_popup_image}}
+                    <div class="newsletter-left">
+                        <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.halo_newsletter_popup_image}}" alt="{{theme_settings.halo_newsletter_popup_heading}}" title="{{theme_settings.halo_newsletter_popup_heading}}">
+                    </div>
+                {{/if}}
+                <div class="newsletter-right{{#if theme_settings.halo_newsletter_popup_image}} hasImage {{else}} noImage{{/if}}">
+                    <h2 class="newsletter-heading">{{theme_settings.halo_newsletter_popup_heading}}</h2>
+                    {{#or (if theme_settings.halo_newsletter_popup_summary1) (if theme_settings.halo_newsletter_popup_summary2)}}
+                        <div class="newsletter-message">
+                            <span>{{theme_settings.halo_newsletter_popup_summary1}}</span>
+                            <span>{{theme_settings.halo_newsletter_popup_summary2}}</span>
+                        </div>
+                    {{/or}}
+                    <div id="popupSubcribeForm">
+                        <form class="form" action="{{urls.subscribe.action}}" method="post" id="popupSubcribeFormSubmit">
+                            <fieldset class="form-fieldset">
+                                <input type="hidden" name="action" value="subscribe">
+                                <input type="hidden" name="nl_first_name" value="bc">
+                                <input type="hidden" name="check" value="1">
+                                <div class="form-field">
+                                    <label class="form-label is-srOnly" for="nl_email2">{{lang 'forms.contact_us.email_2'}}:</label>
+                                    <input class="form-input" id="nl_email2" name="nl_email" type="email" placeholder="{{lang 'forms.contact_us.email'}}">
+                                    <input class="button button--primary button--large" type="submit" value="{{lang 'forms.contact_us.submit_2'}}">
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    {{#if theme_settings.halo_newsletter_popup_again}}
+                        <div class="form-show-again">
+                            <form>
+                                <input id="do-not-show-again" class="do-not-show-again" type="checkbox" name="don't show again" value="1"> 
+                                <label for="do-not-show-again">{{theme_settings.halo_newsletter_popup_again}}</label>
+                            </form>
+                        </div>
+                    {{/if}}
+                    {{#all (if theme_settings.show_social-links) (if theme_settings.halo_newsletter_popup_social) (if social_media)}}
+                        <div class="newsletter-socials">
+                            {{> components/common/social-links position="newsletter"}}
+                        </div>
+                    {{/all}}
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}

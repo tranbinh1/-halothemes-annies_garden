@@ -1,0 +1,85 @@
+// =============================================================================
+// GRID (CSS)
+// =============================================================================
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+
+    @media (min-width: 1200px) {
+        max-width: 1200px;
+    }
+}
+
+.container-fluid{
+	width: 100%;
+    padding: 0;
+    margin: auto;
+}
+
+.page-full-width{
+	.container{
+		width: 100%;
+	    padding-left: 15px;
+	    padding-right: 15px;
+	    max-width: 1690px;
+	    @media (min-width: 1025px) {
+	    	padding-left: 30px;
+	    	padding-right: 30px;
+		&.container-custom2{
+		  max-width: 1200px;
+		  padding-left: 15px;
+		  padding-right: 15px;
+		}
+	    }
+	    @media (min-width: 1281px) {
+	    	padding-left: 60px;
+	    	padding-right: 60px;
+	    }
+	}
+
+	.page-container{
+	    position: relative;
+	    background-color: #ffffff;
+		transition: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
+		@media (min-width: 1025px){
+			z-index: 2;
+		}
+
+		.container{
+			max-width: 1690px;
+		}
+	}
+}
+
+
+.halo-block{
+	@media (max-width: 1024px){
+		.container{
+			&.container-no-padding{
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+		&.halo-banners2{
+			.container{
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+
+	@media (max-width: 550px){
+		&.halo-banners{
+			.container{
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}
+}

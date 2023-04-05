@@ -1,0 +1,165 @@
+<div class="heroCarousel-wrapper">
+    <div class="heroCarousel"
+        data-slick='{
+            "arrows": false,
+            "mobileFirst": true,
+            "slidesToShow": 1,
+            "slidesToScroll": 1,
+            "autoplay": false,
+            "autoplaySpeed": {{carousel.swap_frequency}},
+            "lazyLoad": "anticipated",
+            "infinite": true,
+            "fade": true,
+            "asNavFor": ".heroCarousel-custom",
+            "nextArrow": "<svg class=&apos;slick-next slick-arrow&apos; aria-label=&apos;Next Slide&apos;><use xlink:href=&apos;#slick-arrow-next&apos;></use></svg>", 
+            "prevArrow": "<svg class=&apos;slick-prev slick-arrow&apos; aria-label=&apos;Previous Slide&apos;><use xlink:href=&apos;#slick-arrow-prev&apos;></use></svg>",
+            "responsive": [
+                {
+                    "breakpoint": 1200,
+                    "settings": {
+                        "dots": true,
+                        "arrows": {{theme_settings.homepage_show_carousel_arrows}}
+                    }
+                }
+            ]
+        }'>
+        {{#each carousel.slides}}
+            <div class="heroCarousel-slide {{#if ../theme_settings.homepage_stretch_carousel_images}}stretch{{/if}} {{#if @first}}heroCarousel-slide--first{{/if}}">
+                {{#if @index '==' 0}}
+                    {{#if (merge this subheading=../../theme_settings.homepage_show_carousel_0_subheading)}}{{/if}}
+                    {{#if (merge this countdown=../../theme_settings.homepage_show_carousel_0_countdown)}}{{/if}}
+                    {{#if (merge this position=../../theme_settings.homepage_show_carousel_0_position-content)}}{{/if}}
+                    {{#if (merge this imageMobile=../../theme_settings.homepage_show_carousel_0_mobile-image)}}{{/if}}
+                    {{#if (merge this customTextLink1=../../theme_settings.homepage_show_carousel_0_customtextlink1)}}{{/if}}
+                    {{#if (merge this customLink1=../../theme_settings.homepage_show_carousel_0_customlink1)}}{{/if}}
+                    {{#if (merge this customTextLink2=../../theme_settings.homepage_show_carousel_0_customtextlink2)}}{{/if}}
+                    {{#if (merge this customLink2=../../theme_settings.homepage_show_carousel_0_customlink2)}}{{/if}}
+                    {{#if (merge this customTextLink3=../../theme_settings.homepage_show_carousel_0_customtextlink3)}}{{/if}}
+                    {{#if (merge this customLink3=../../theme_settings.homepage_show_carousel_0_customlink3)}}{{/if}}
+                    {{#if (merge this customTextBtn=../../theme_settings.homepage_show_carousel_0_customtextbtn)}}{{/if}}
+                    {{#if (merge this customBtn=../../theme_settings.homepage_show_carousel_0_custombtn)}}{{/if}}
+                    {{#if (merge this hasBackground=../../theme_settings.carousel-bgColor)}}{{/if}}
+                {{/if}}
+                {{#if @index '==' 1}}
+                    {{#if (merge this subheading=../../theme_settings.homepage_show_carousel_1_subheading)}}{{/if}}
+                    {{#if (merge this countdown=../../theme_settings.homepage_show_carousel_1_countdown)}}{{/if}}
+                    {{#if (merge this position=../../theme_settings.homepage_show_carousel_1_position-content)}}{{/if}}
+                    {{#if (merge this imageMobile=../../theme_settings.homepage_show_carousel_1_mobile-image)}}{{/if}}
+                    {{#if (merge this customTextLink1=../../theme_settings.homepage_show_carousel_1_customtextlink1)}}{{/if}}
+                    {{#if (merge this customLink1=../../theme_settings.homepage_show_carousel_1_customlink1)}}{{/if}}
+                    {{#if (merge this customTextLink2=../../theme_settings.homepage_show_carousel_1_customtextlink2)}}{{/if}}
+                    {{#if (merge this customLink2=../../theme_settings.homepage_show_carousel_1_customlink2)}}{{/if}}
+                    {{#if (merge this customTextLink3=../../theme_settings.homepage_show_carousel_1_customtextlink3)}}{{/if}}
+                    {{#if (merge this customLink3=../../theme_settings.homepage_show_carousel_1_customlink3)}}{{/if}}
+                    {{#if (merge this customTextBtn=../../theme_settings.homepage_show_carousel_1_customtextbtn)}}{{/if}}
+                    {{#if (merge this customBtn=../../theme_settings.homepage_show_carousel_1_custombtn)}}{{/if}}
+                    {{#if (merge this hasBackground=../../theme_settings.carousel-bgColor)}}{{/if}}
+                {{/if}}
+                {{#if @index '==' 2}}
+                    {{#if (merge this subheading=../../theme_settings.homepage_show_carousel_2_subheading)}}{{/if}}
+                    {{#if (merge this countdown=../../theme_settings.homepage_show_carousel_2_countdown)}}{{/if}}
+                    {{#if (merge this position=../../theme_settings.homepage_show_carousel_2_position-content)}}{{/if}}
+                    {{#if (merge this imageMobile=../../theme_settings.homepage_show_carousel_2_mobile-image)}}{{/if}}
+                    {{#if (merge this customTextLink1=../../theme_settings.homepage_show_carousel_2_customtextlink1)}}{{/if}}
+                    {{#if (merge this customLink1=../../theme_settings.homepage_show_carousel_2_customlink1)}}{{/if}}
+                    {{#if (merge this customTextLink2=../../theme_settings.homepage_show_carousel_2_customtextlink2)}}{{/if}}
+                    {{#if (merge this customLink2=../../theme_settings.homepage_show_carousel_2_customlink2)}}{{/if}}
+                    {{#if (merge this customTextLink3=../../theme_settings.homepage_show_carousel_2_customtextlink3)}}{{/if}}
+                    {{#if (merge this customLink3=../../theme_settings.homepage_show_carousel_2_customlink3)}}{{/if}}
+                    {{#if (merge this customTextBtn=../../theme_settings.homepage_show_carousel_2_customtextbtn)}}{{/if}}
+                    {{#if (merge this customBtn=../../theme_settings.homepage_show_carousel_2_custombtn)}}{{/if}}
+                    {{#if (merge this hasBackground=../../theme_settings.carousel-bgColor)}}{{/if}}
+                {{/if}}
+                {{#if @index '==' 3}}
+                    {{#if (merge this subheading=../../theme_settings.homepage_show_carousel_3_subheading)}}{{/if}}
+                    {{#if (merge this countdown=../../theme_settings.homepage_show_carousel_3_countdown)}}{{/if}}
+                    {{#if (merge this position=../../theme_settings.homepage_show_carousel_3_position-content)}}{{/if}}
+                    {{#if (merge this imageMobile=../../theme_settings.homepage_show_carousel_3_mobile-image)}}{{/if}}
+                    {{#if (merge this customTextLink1=../../theme_settings.homepage_show_carousel_3_customtextlink1)}}{{/if}}
+                    {{#if (merge this customLink1=../../theme_settings.homepage_show_carousel_3_customlink1)}}{{/if}}
+                    {{#if (merge this customTextLink2=../../theme_settings.homepage_show_carousel_3_customtextlink2)}}{{/if}}
+                    {{#if (merge this customLink2=../../theme_settings.homepage_show_carousel_3_customlink2)}}{{/if}}
+                    {{#if (merge this customTextLink3=../../theme_settings.homepage_show_carousel_3_customtextlink3)}}{{/if}}
+                    {{#if (merge this customLink3=../../theme_settings.homepage_show_carousel_3_customlink3)}}{{/if}}
+                    {{#if (merge this customTextBtn=../../theme_settings.homepage_show_carousel_3_customtextbtn)}}{{/if}}
+                    {{#if (merge this customBtn=../../theme_settings.homepage_show_carousel_3_custombtn)}}{{/if}}
+                    {{#if (merge this hasBackground=../../theme_settings.carousel-bgColor)}}{{/if}}
+                {{/if}}
+                {{#if @index '==' 4}}
+                    {{#if (merge this subheading=../../theme_settings.homepage_show_carousel_4_subheading)}}{{/if}}
+                    {{#if (merge this countdown=../../theme_settings.homepage_show_carousel_4_countdown)}}{{/if}}
+                    {{#if (merge this position=../../theme_settings.homepage_show_carousel_4_position-content)}}{{/if}}
+                    {{#if (merge this imageMobile=../../theme_settings.homepage_show_carousel_4_mobile-image)}}{{/if}}
+                    {{#if (merge this customTextLink1=../../theme_settings.homepage_show_carousel_4_customtextlink1)}}{{/if}}
+                    {{#if (merge this customLink1=../../theme_settings.homepage_show_carousel_4_customlink1)}}{{/if}}
+                    {{#if (merge this customTextLink2=../../theme_settings.homepage_show_carousel_4_customtextlink2)}}{{/if}}
+                    {{#if (merge this customLink2=../../theme_settings.homepage_show_carousel_4_customlink2)}}{{/if}}
+                    {{#if (merge this customTextLink3=../../theme_settings.homepage_show_carousel_4_customtextlink3)}}{{/if}}
+                    {{#if (merge this customLink3=../../theme_settings.homepage_show_carousel_4_customlink3)}}{{/if}}
+                    {{#if (merge this customTextBtn=../../theme_settings.homepage_show_carousel_4_customtextbtn)}}{{/if}}
+                    {{#if (merge this customBtn=../../theme_settings.homepage_show_carousel_4_custombtn)}}{{/if}}
+                    {{#if (merge this hasBackground=../../theme_settings.carousel-bgColor)}}{{/if}}
+                {{/if}}
+                <div class="heroCarousel-image-wrapper">
+                    <a class="heroCarousel-image" href="{{url}}" aria-label="{{#if this.alt_text.length '!=' 0}}{{this.alt_text}}{{else}}{{lang 'common.carousel_slide_number' slide_number=(add @index 1)}}{{/if}}">
+                        {{#if @first}}
+                            {{> components/common/responsive-img
+                                image=stencil_image
+                                class="heroCarousel-image"
+                                fallback_size='1280w'
+                                lazyload='disabled'
+                            }}
+                        {{else}}
+                            {{> components/common/responsive-img
+                                image=stencil_image
+                                class="heroCarousel-image"
+                                fallback_size='1280w'
+                                lazyload='lazyload'
+                            }}
+                        {{/if}}
+                        {{#if imageMobile}}
+                            <img class="lazyload image-mobile" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../settings.store_hash}}/product_images/uploaded_images/{{imageMobile}}" alt="{{stencil_image.alt}}" title="{{stencil_image.alt}}">
+                        {{else}}
+                            <img class="lazyload image-mobile" src="{{cdn 'img/loading.svg'}}" data-src="{{getImageSrcset stencil_image 1x=(default fallback_size '960w')}}" alt="{{stencil_image.alt}}" title="{{stencil_image.alt}}">
+                        {{/if}}
+                    </a>
+                </div>
+                <div class="heroCarousel-content-wrapper">
+                    {{#if heading}}
+                        {{> components/carousel-content show_background=true}}
+                    {{else}}
+                        {{#if text}}
+                            {{> components/carousel-content show_background=true}}
+                        {{else}}
+                            {{#if button_text}}
+                                {{> components/carousel-content show_background=false}}
+                            {{/if}}
+                        {{/if}}
+                    {{/if}}
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    <div class="heroCarousel-custom" data-autoplay="{{carousel.swap_frequency}}">
+        {{#each carousel.slides}}
+            {{#if @index '==' 0}}
+                {{#if (merge this position=../../theme_settings.homepage_show_carousel_0_position-content)}}{{/if}}
+            {{/if}}
+            {{#if @index '==' 1}}
+                {{#if (merge this position=../../theme_settings.homepage_show_carousel_1_position-content)}}{{/if}}
+            {{/if}}
+            {{#if @index '==' 2}}
+                {{#if (merge this position=../../theme_settings.homepage_show_carousel_2_position-content)}}{{/if}}
+            {{/if}}
+            {{#if @index '==' 3}}
+                {{#if (merge this position=../../theme_settings.homepage_show_carousel_3_position-content)}}{{/if}}
+            {{/if}}
+            {{#if @index '==' 4}}
+                {{#if (merge this position=../../theme_settings.homepage_show_carousel_4_position-content)}}{{/if}}
+            {{/if}}
+            <div class="heroCarousel-customItem">
+                <div class="heroCarousel-customLinks" data-title="0{{add @index 1}}" data-position="{{position}}"></div>
+            </div>
+        {{/each}}
+    </div>
+</div>

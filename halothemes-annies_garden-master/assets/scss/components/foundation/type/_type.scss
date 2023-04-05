@@ -1,0 +1,110 @@
+// =============================================================================
+// TYPE (CSS)
+// =============================================================================
+
+// Stencil type component additions
+// -----------------------------------------------------------------------------
+
+html{
+    -webkit-tap-highlight-color: transparent;
+}
+
+html *{
+    outline: none!important;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-size: $body-fontSize;
+    font-weight: $fontWeight-normal;
+    line-height: $lineHeight-large;
+    letter-spacing: $letterSpacing-base;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $fontFamily-headings;
+    font-style: normal;
+    font-weight: $fontWeight-bold;
+    line-height: 1.2;
+    letter-spacing: $letterSpacing-base;
+    margin: 0 0 15px 0;
+    text-transform: capitalize;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    color: $header-font-color;
+
+    a{
+        color: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        font-family: inherit;
+        line-height: inherit;
+        text-decoration: none;
+
+        &:hover{
+            color: inherit;
+        }
+    }
+}
+
+h5,
+h6 {
+    text-transform: $heading-textTransform;
+}
+
+a {
+    transition: $anchor-transition;
+    text-decoration: none;
+    position: relative;
+    touch-action: manipulation;
+}
+
+cite {
+    line-height: $blockquote-cite-lineHeight;
+    margin: $blockquote-cite-margin;
+}
+
+h1 {
+    font-size: $h1-font-size;
+}
+
+h2 {
+    font-size: $h2-font-size;
+}
+
+h3 {
+    font-size: $h3-font-size;
+}
+
+h4 {
+    font-size: $h4-font-size;
+}
+
+h5 {
+    font-size: $h5-font-size;
+}
+
+h6 {
+    font-size: $h6-font-size;
+}
+
+.definitionList {
+    @include clearfix;
+}
+
+.definitionList-key {
+    color: stencilColor("color-textSecondary");
+    float: left;
+    font-weight: fontWeight("normal");
+    margin: 0 spacing("quarter") 0 0;
+}
+
+.definitionList-value {
+    margin: 0;
+}

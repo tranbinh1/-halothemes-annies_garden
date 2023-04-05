@@ -1,0 +1,324 @@
+.productList{
+    display: block;
+    margin: 0;
+    font-size: 0;
+    list-style: none;
+    text-align: left;
+
+    .product{
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        padding: 0;
+        margin: 0 0 30px 0;
+        white-space: normal;
+    }
+
+    .card{
+        background-color: #ffffff;
+        text-align: left;
+    }
+
+    .card-body{
+        .card-body-content{
+            text-align: left;
+        }
+
+        .card-option{
+            .form-field{
+                text-align: left;
+                margin-bottom: 0;
+
+                + .form-field{
+                    margin-top: 19px;
+                }
+            }
+        }
+
+        .card-body-button{
+            position: relative;
+            top: auto;
+            left: auto;
+            right: auto;
+            bottom: auto;
+            opacity: 1;
+            height: auto;
+            overflow: visible;
+            visibility: visible;
+            transform: none;
+            margin: 21px 0 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-wishlist{
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: unset;
+            order: 2;
+            width: 46px;
+            height: 46px;
+
+            .text{
+                display: none;
+                font-size: $fontSize-root;
+                font-weight: $fontWeight-bold;
+                color: $color-textBase;
+                line-height: 1.625;
+                height: auto;
+                white-space: unset;
+                border-radius: 0;
+            }
+
+            .icon{
+                top: 1px;
+            }
+        }
+
+        .card-action{
+            width: calc(100% - 61px);
+            margin: 0;
+            order: -1;
+            padding-top: 9px;
+            padding-bottom: 9px;
+        }
+    }
+
+    .card-link{
+        .card-img-container{
+            margin: 0 auto;
+            max-width: 100%;
+        }
+    }
+
+    .card-option{
+        .form-field{
+            .form-option{ 
+                margin-right: 7px;
+
+                > span{
+                    width: 30px;
+                    height: 30px;
+
+                    &:after{
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            .showmore{
+                font-size: $fontSize-root;
+            }
+        }
+    }
+
+    .card-desc{
+        display: block;
+        margin: 15px 0;
+        line-height: 1.75;
+        color: $color-textBase;
+        font-size: $card-title-fontSize;
+        font-weight: $fontWeight-normal;
+    }
+
+    .card-price{
+        justify-content: flex-start;
+    }
+
+    @media (min-width: 551px){
+        .card{
+            width: 100%;
+            display: table;
+        }
+
+        .card-figure{
+            display: table-cell;
+            vertical-align: top;
+            width: 200px;
+        }
+
+        .card-body{
+            display: table-cell;
+            vertical-align: top;
+            padding: 0 0 0 30px;
+            width: calc(100% - 200px);
+
+            .card-body-content{
+                padding-top: 0;
+                position: relative;
+                top: -7px;
+            }
+        }
+    }
+
+    @media (min-width: 768px){
+        .card-body{
+            .card-body-button{
+                justify-content: flex-start;
+            }
+
+            .card-wishlist{
+                width: auto;
+                height: auto;
+                border-radius: 0;
+                box-shadow: unset;
+                background-color: unset;
+                margin: 0 0 0 15px;
+
+                .text{
+                    display: block;
+                    width: auto;
+                    opacity: 1;
+                    visibility: visible;
+                    position: relative;
+                    top: unset;
+                    left: unset;
+                    right: unset;
+                    bottom: unset;
+                    transform: unset;
+                    padding-left: unset;
+                    padding-right: unset;
+                    order: 2;
+                }
+
+                .icon{
+                    order: -1;
+                    line-height: 1;
+                    border-radius: 50%;
+                    background-color: #ffffff;
+                    box-shadow: 0 0 10px rgba(0, 0, 10, 0.05);
+                    width: 36px;
+                    height: 36px;
+                    padding: 8px;
+                    top: unset;
+                    left: unset;
+                    margin: 0 15px 0 0;
+                }
+            }
+
+            .card-action{
+                max-width: 250px;
+            }
+        }
+    }
+
+    @media (min-width: 1025px){
+        .card-hover{
+            &:hover{
+                .card-link{
+                    .card-image {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    .card-image-2 {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                }
+            }
+
+            .card-figure{
+                &:hover{
+                    .card-link{
+                        .card-image {
+                            opacity: 0;
+                            visibility: hidden;
+                        }
+
+                        .card-image-2 {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+
+        .card{
+            &:hover{
+                .card-figure-button{
+                    opacity: 0;
+                    visibility: hidden;
+                    top: 100%;
+                    pointer-events: none;
+                }
+            }
+
+            .card-figure{
+                &:hover{
+                    .card-figure-button{
+                        opacity: 1;
+                        visibility: visible;
+                        top: 50%;
+                        pointer-events: auto;
+                    }
+                }
+            }
+        }
+
+        .card-figure{
+            width: 390px;
+        }
+
+        .card-body{
+            display: table-cell;
+            vertical-align: top;
+            padding-left: 70px;
+            width: calc(100% - 390px);
+
+            .card-body-button{
+                margin-top: 30px;
+            }
+
+            .card-wishlist{
+                margin-left: 30px;
+
+                &:hover{
+                    .text{
+                        background-image: linear-gradient(transparent 97%, $color-textBase 3%);
+                        background-repeat: repeat-x;
+                        background-position-y: -1px;
+                    }
+                }
+            }
+        }
+
+        .card-title{
+            > a{
+                font-size: $fontSize-root;
+            }
+        }
+
+        .card-option{
+            margin-top: 26px;
+
+            .form-field{
+                display: flex;
+                align-items: center;
+
+                > .form-option{
+                    margin-right: 10px;
+
+                    span{
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+
+        .card-desc{
+            margin-bottom: 20px;
+        }
+    }
+
+    @media (min-width: 1280px){
+        .product{
+            margin-bottom: 70px;
+        }
+    }
+}

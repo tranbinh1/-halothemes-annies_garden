@@ -1,0 +1,15 @@
+{{#if theme_settings.halo-sidebar-products}}
+	<div class="sidebarBlock" id="featured-products">
+	    <h4 class="sidebarBlock-heading">{{title}}</h4>
+	    <div class="sidebarBlock-content">
+	        <div class="products-list">
+	            {{#each (limit products theme_settings.sidebar_products_per_page)}}
+	                {{> components/halothemes/products/product-card theme_settings=../theme_settings}}
+	            {{/each}}
+	            {{#if theme_settings.halo-sidebar-products-btn}}
+	            	<a href="{{theme_settings.halo-sidebar-products-link}}" class="link">{{theme_settings.halo-sidebar-products-btn}}</a>
+	            {{/if}}
+	        </div>
+	    </div>
+	</div>
+{{/if}}

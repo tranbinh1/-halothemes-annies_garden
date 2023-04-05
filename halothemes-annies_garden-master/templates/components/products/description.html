@@ -1,0 +1,43 @@
+<div id="accordion" class="productView-tabs">
+	{{#if product.description}}
+	    <div class="card">
+	        <div class="card-header" id="desc-1-title">
+	            <button class="title" data-toggle="collapse" data-target="#desc-1-content" aria-expanded="true" aria-controls="desc-1-content">
+	                {{lang 'products.description'}}
+	            </button>
+	            <span class="icon-plus">&nbsp;</span>
+	        </div>
+	        <div id="desc-1-content" class="collapse" aria-labelledby="desc-1-title" data-parent="#accordion">
+	            <div class="card-body productView-description{{#if product.warranty}} has-warranty{{/if}}" {{#if settings.data_tag_enabled}} data-event-type="product" {{/if}}>
+	                {{{product.description}}}
+	            </div>
+	        </div>
+	    </div>
+	{{/if}}
+	{{#if product.warranty}}
+	    <div class="card warranty">
+	        <div class="card-header" id="desc-2-title">
+	            <button class="title" data-toggle="collapse" data-target="#faqs-2-content" aria-expanded="true" aria-controls="faqs-2-content">
+	                {{lang 'products.warranty'}}
+	            </button>
+	            <span class="icon-plus">&nbsp;</span>
+	        </div>
+	        <div id="faqs-2-content" class="collapse" aria-labelledby="desc-2-title" data-parent="#accordion">
+	            <div class="card-body has-warranty">
+	                {{{product.warranty}}}
+	            </div>
+	        </div>
+	    </div>
+	{{/if}}
+    <div class="card u-hiddenVisually" id="halo-custom-tab">
+        <div class="card-header" id="desc-3-title">
+            <button class="title" data-toggle="collapse" data-target="#faqs-3-content" aria-expanded="true" aria-controls="faqs-3-content">
+                {{lang 'products.custom_tab'}}
+            </button>
+            <span class="icon-plus">&nbsp;</span>
+        </div>
+        <div id="faqs-3-content" class="collapse" aria-labelledby="desc-3-title" data-parent="#accordion">
+            <div class="card-body{{#if product.warranty}} has-warranty{{/if}}"></div>
+        </div>
+    </div>
+</div>

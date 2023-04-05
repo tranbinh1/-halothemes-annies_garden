@@ -1,0 +1,13 @@
+<div class="halo-block halo-block-product halo-block-product2 padding-top-30 padding-bottom-30">
+	<div class="container">
+		<div class="halo-block-header">
+            <h2 class="title">{{title}}</h2>
+        </div>
+        {{#if settings.data_tag_enabled}}
+        	{{> components/products/carousel products=products productsnew=productsnew block_id=block_id list="Most Popular Products"}}
+        {{else}}
+        	{{> components/products/carousel products=products productsnew=productsnew block_id=block_id}}
+        {{/if}}
+	</div>
+</div>
+{{{region name="home_below_top_products"}}}

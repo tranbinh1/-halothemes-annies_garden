@@ -1,0 +1,12 @@
+{{#all settings.show_product_reviews}}
+   	<div class="halo-block halo-block-reviews" id="tab-reviews" data-product-reviews>
+      	<div class="container">
+      		<div class="halo-block-header">
+		        <h2 class="title">{{lang 'products.reviews.title_block'}}</h2>
+		    </div>
+	      	<div class="productView-reviews-wrapper">
+	        	{{> components/products/reviews reviews=product.reviews product=product urls=urls}}
+	      	</div>
+      	</div>
+   	</div>
+{{/all}}

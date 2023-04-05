@@ -1,0 +1,212 @@
+// =============================================================================
+// SWATCH SIZES (CSS)
+// =============================================================================
+
+
+// Swatch Size Changes
+// -----------------------------------------------------------------------------
+
+// do some math
+$value_of_swatch_size : stencilString("swatch_option_size");
+$position_of_x : str-index($value_of_swatch_size, "x");
+$first_value : str-slice($value_of_swatch_size, 0, $position_of_x - 1);
+$second_value : str-slice($value_of_swatch_size, $position_of_x + 1);
+
+.form-option-variant--none {
+    height: 22px;
+    overflow: hidden;
+}
+
+[data-product-attribute]{
+    .form-option{
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 7px 7px 0;
+        padding: 0;
+
+        .form-option-variant{
+            min-width: unset;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+            border-radius: 50%;
+            text-align: center;
+            border: 1px solid #c6c6d0;
+            font-size: 0;
+            margin: 0;
+            position: relative;
+
+            &:after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                transition: $anchor-transition;
+                border-radius: 50%;
+                background-color: rgba(255,255,255, 0);
+                opacity: 1;
+                visibility: visible;
+                border: 2px solid #ffffff;
+            }
+        }
+
+        .form-option-expanded {
+            display: none;
+            background-color: stencilColor("body-bg");
+            border: 1px solid #dadada;
+            left: calc(100% + 5px);
+            padding: 4px;
+            position: absolute;
+            top: calc(100% + 5px);
+            transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            visibility: hidden;
+            opacity: 0;
+
+            .form-option-image {
+                display: block;
+                height: 100px;
+                width: 100px;
+                background-position: 50%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+
+        &.form-option-swatch{
+            border: 0;
+            box-shadow: none;
+            position: relative;
+            overflow: visible;
+
+            .form-option-variant{
+                background-color: #ffffff;
+                background-size: auto;
+
+                &:after{
+                    border-width: 3px;
+                }
+            }
+
+            .form-option-variant--color2{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+
+                span{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                }
+            }
+        }
+
+        &.form-option-rectangle{
+            border: 0;
+            box-shadow: none;
+
+            .form-option-variant{
+                font-size: $fontSize-root;
+                font-weight: $fontWeight-normal;
+                color: $color-textBase;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &.form-option-length{
+                    min-width: 40px;
+                    width: auto;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                }
+            }
+        }
+
+        &.unavailable{
+            position: relative;
+            /*pointer-events: none;*/
+            background: transparent;
+
+            .form-option-variant{
+                opacity: .3;
+
+                &:before{
+                    content: "";
+                    top: 18px;
+                    left: -10px;
+                    height: 1px;
+                    opacity: 1;
+                    z-index: 5;
+                    border: none;
+                    position: absolute;
+                    visibility: visible;
+                    width: calc(150% - 1px);
+                    background-color: #ecab9c;
+                    transform: rotate(-45deg);
+                }
+            }
+
+            &.form-option-rectangle{
+                .form-option-variant{
+                    opacity: 1;
+                    background: #f7f7f9;
+                    border-color: #f7f7f9;
+
+                    &:after{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .form-radio{
+        &:checked{
+            + .form-option{
+                &.form-option-swatch{
+                    .form-option-variant{
+                        &:after{
+                            box-shadow: 0 0 0px 1px #5e5e5e;
+                        }
+                    }
+                }
+
+                &.form-option-rectangle{
+                    .form-option-variant{
+                        font-weight: $fontWeight-bold;
+                        color: #193753;
+
+                        &:after{
+                            box-shadow: 0 0 0px 1px #5e5e5e;
+                        }
+                    }
+                }
+            }
+        } 
+    }
+
+    @media (min-width: 1025px){
+        .form-option{
+            margin-right: 10px;
+            margin-bottom: 10px;
+
+            .form-option-expanded{
+                display: block;
+            }
+
+            &:hover{
+                .form-option-expanded {
+                    opacity: 1;
+                    transform: translate(-50%, 0);
+                    visibility: visible;
+                    z-index: 5000;
+                }
+            }
+        }
+    }
+}

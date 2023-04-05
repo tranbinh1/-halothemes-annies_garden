@@ -1,0 +1,149 @@
+// =============================================================================
+// ACCORDION (CSS)
+// =============================================================================
+
+
+.accordion {
+    border-radius: $accordion-borderRadius;
+    box-shadow: none;
+
+    .navList {
+        margin-bottom: 0;
+    }
+}
+
+.accordion-navigation {
+    margin-top: -1px;
+    position: relative;
+    text-decoration: none;
+}
+
+.accordion--navList {
+   border: 0;
+   border-radius: 0;
+
+    .accordion-block {
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    .accordion-navigation{
+        border: 0;
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
+
+        .accordion-title{
+            font-size: $h4-font-size;
+            font-weight: $fontWeight-normal;
+            margin: 0 0 22px 0;
+            padding: 0;
+            line-height: 1;
+            text-transform: unset;
+        }
+
+        .accordion-navigation-actions{
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 0;
+
+            .icon{
+                vertical-align: top;
+                width: 20px;
+                height: 20px;
+                stroke: transparent;
+            }
+        }
+    }
+
+    .accordion-content{
+        padding: 0;
+        border: 0;
+
+        .navList-item{
+            a{
+                margin: 0;
+                padding: 0 0 0 26px;
+
+                .navList-action-close{
+                    position: absolute;
+                    float: unset;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    margin: 0;
+                    width: 20px;
+                    height: 20px;
+                    padding: 6px;
+
+                    .icon{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                &:before{
+                    background-color: white;
+                    border: solid #d0d0d0;
+                    border-width: 1px;
+                    width: 14px;
+                    height: 14px;
+                    top: 50%;
+                    bottom: auto;
+                    left: 0;
+                    margin: 0;
+                    border-radius: 0;
+                    transform: translateY(-50%);
+                    z-index: 11;
+                }
+
+                &:after{
+                    margin: 0;
+                    transform: translateY(-50%);
+                    z-index: 12;
+                }
+
+                &:hover{
+                    &:before{
+                        width: 14px;
+                    }
+                }
+            }
+        }
+
+        &.facetedSearch-content--rating{
+            .navList-item{
+                a{
+                    padding-left: 0;
+
+                    > span{
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .rating--small{
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1025px){
+        .accordion-content{
+            &.facetedSearch-content--rating{
+                .navList-item{
+                    a{
+                        &:hover{
+                            > span{
+                                background-image: unset;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

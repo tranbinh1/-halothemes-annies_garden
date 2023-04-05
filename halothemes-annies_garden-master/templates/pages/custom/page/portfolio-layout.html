@@ -1,0 +1,29 @@
+---
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+---
+{{#partial "page"}}
+<div class="container">
+    <div class="breadcrumb-wrapper">
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+    </div>
+    <div class="page page-portfolio">
+        <div class="page-header">
+            <h1 class="page-heading">{{ page.title }}</h1>
+        </div>
+        <main class="page-content">
+            {{{page.content}}}
+            {{{region name="page_builder_content"}}}
+        </main>
+    </div>
+</div>
+
+{{> components/halothemes/page/halo-portfolio-product}}
+
+{{/partial}}
+{{> layout/base}}

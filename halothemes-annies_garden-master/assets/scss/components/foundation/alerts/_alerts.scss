@@ -1,0 +1,61 @@
+// =============================================================================
+// ALERTS
+// =============================================================================
+
+.alertBox {
+    border-radius: $alert-radius;
+    font-size: $fontSize-root;
+    font-weight: $fontWeight-normal;
+    font-style: normal;
+    color: stencilColor("alert-color");
+    padding: 12px 15px 13px 15px;
+    margin: 0 0 30px 0;
+
+    &.alertBox--warning{
+        color: stencilColor("color-warning");
+
+        .icon {
+            svg{
+                fill: stencilColor("color-warning");
+            }
+        }
+    }
+
+    &.alertBox--success{
+        color: stencilColor("color-success");
+    }
+
+    &.alertBox--error{
+        color: stencilColor("color-error");
+
+        .icon {
+            svg{
+                fill: stencilColor("color-error");
+            }
+        }
+    }
+
+    &.alertBox--info {
+        color: stencilColor("alert-color-alt");
+
+        .alertBox-close {
+            svg {
+                fill: stencilColor("alert-color-alt");
+            }
+        }
+
+        .icon {
+            svg{
+                fill: stencilColor("alert-color-alt");
+            }
+        }
+    }
+}
+
+.alertBox-icon {
+    padding: 0 10px 0 0;
+
+    .icon {
+        @include square(25px);
+    }
+}

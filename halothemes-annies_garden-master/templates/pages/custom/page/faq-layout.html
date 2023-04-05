@@ -1,0 +1,58 @@
+{{#partial "page"}}
+<div class="page-container">
+    <div class="container">
+        <div class="breadcrumb-wrapper">
+            {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        </div>
+        <div class="page page-normal">
+            <div class="page-header">
+                <h1 class="page-heading">{{#if page.title '==' 'FAQs' }}Frequently Asked Questions{{else}}{{page.title}}{{/if}}</h1>
+                <div class="page-description"></div>
+            </div>
+            {{#if theme_settings.halo-faqs-sidebar}}
+                <div class="page-sidebar halo-faqs-sidebar">
+                    <div class="page-sidebar-close">
+                        <a href="#" class="close">
+                            <span class="icon">×</span>
+                            <span class="text">{{lang 'common.close'}}</span>
+                        </a>
+                    </div>
+                    {{> components/halothemes/page/halo-faqs-sidebar}}
+                </div>
+            {{/if}}
+            <main class="page-content halo-faqs-content">
+                {{#if theme_settings.halo-faqs-sidebar}}
+                    <div class="page-sidebar-mobile-wrapper">
+                        <div class="page-sidebar-mobile">
+                            <span class="text">{{lang 'common.sidebar'}}</span>
+                            <svg class="icon" aria-hidden="true"><use xlink:href="#icon-sidebar"></use></svg>
+                        </div>
+                    </div>
+                {{/if}}
+            	{{#if page.sub_pages}}
+                    <nav class="navBar navBar--sub">
+                        <ul class="navBar-section account-navigation">
+                        {{#each page.sub_pages}}
+                            <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
+                        {{/each}}
+                        </ul>
+                    </nav>  
+                {{/if}}
+                {{{page.content}}}
+                {{{region name="page_builder_content"}}}
+            </main>
+            {{#if page.feed}}
+                <ul>
+                    {{#each page.feed}}
+                        <li>
+                            <h6><a href="{{url}}" target="_blank">{{title}}</a></h6>
+                            <p>{{content}}</p>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+        </div>
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}

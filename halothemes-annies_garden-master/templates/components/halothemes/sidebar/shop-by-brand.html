@@ -1,0 +1,15 @@
+{{#if theme_settings.halo-sidebar-shop-by-brand}}
+    <div class="sidebarBlock" id="shopByBrands">
+        <h4 class="sidebarBlock-heading"><span>Brands</span></h4>
+        <ul class="navList">
+            {{#each shop_by_brand}}
+                <li class="navList-item">
+                    <a href="{{url}}"><span>{{name}}</span></a>
+                </li>
+            {{/each}}
+            <li class="navList-item view-all">
+                <a href="{{urls.brands}}"><span>{{lang 'common.view_all'}}</span></a>
+            </li>
+        </ul>
+    </div>
+{{/if}}

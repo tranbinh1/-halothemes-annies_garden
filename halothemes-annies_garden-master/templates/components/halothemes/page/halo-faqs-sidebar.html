@@ -1,0 +1,29 @@
+<nav class="page-sidebar-content">
+    <div class="faq-contact">
+        {{#if theme_settings.halo-faqs-sidebar-title}}
+            <h3 class="faq-title">{{theme_settings.halo-faqs-sidebar-title}}</h3>
+        {{/if}}
+        <div class="faqs-group">
+            {{#if theme_settings.halo-faqs-sidebar-icon1}}
+                <div class="faqs-group-item">
+                    <a href="{{theme_settings.halo-faqs-sidebar-icon1-link}}">
+                        <svg class="icon">
+                            <use xlink:href="#icon-messenger"></use>
+                        </svg>
+                        <span class="text">{{theme_settings.halo-faqs-sidebar-icon1}}</span>
+                    </a>
+                </div>
+            {{/if}}
+            {{#if theme_settings.halo-faqs-sidebar-icon2}}
+                <div class="faqs-group-item">
+                    <a href="{{theme_settings.halo-faqs-sidebar-icon2-link}}">
+                        <svg class="icon">
+                            <use xlink:href="#icon-email"></use>
+                        </svg>
+                        <span class="text">{{theme_settings.halo-faqs-sidebar-icon2}}</span>
+                    </a>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</nav>

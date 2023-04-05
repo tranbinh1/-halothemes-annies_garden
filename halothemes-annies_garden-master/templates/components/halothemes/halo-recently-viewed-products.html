@@ -1,0 +1,43 @@
+{{#if theme_settings.halo_recently_viewed_products }}
+    <section class="recently-viewed-products-sidebar"{{#unless settings.data_tag_enabled}} data-tag-enabled="false"{{/unless}}>
+        <div class="lst-seen-widget">
+            <div class="collapse-icon">
+                <svg class="icon" aria-label="Collapse Recently Viewed Product popup"><use xlink:href="#icon-collapse"></use></svg>
+            </div>
+            <div class="top">
+                <div class="cart-icon with-products">
+                    <a href="#" data-cart-preview2 aria-label="{{lang 'cart.nav_aria_label'}}">
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-cart"></use></svg>
+                        <span class="cart-quantity {{#if cart.items}} countPill--positive{{/if}}">{{cart.quantity}}</span>
+                    </a>
+                </div>
+            </div>
+            <div class="in-content">
+                {{#if theme_settings.recently_viewed_products_title}}
+                    <h3 class="title">{{theme_settings.recently_viewed_products_title}}</h3>
+                {{/if}}
+                <div class="products-grid" id="recently-viewed-products-list">
+                    <div class="no-products" style="flex-direction: column;display:none;">
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-no-products"></use></svg>
+                        <div class="text">Sorry, there are no products.</div>
+                    </div>
+                </div>
+                <div id="recently-viewed-products-list-tmp" style="display: none !important;"></div>
+            </div>
+            {{#if theme_settings.halo_button_top }}
+                <div class="bottom backtoTop">
+                    <svg class="icon" aria-hidden="true"><use xlink:href="#icon-cross-line-top2"></use></svg>
+                    <div class="text">{{theme_settings.halo_button_top}}</div>
+                </div>
+            {{/if}}
+        </div>
+        <div class="wrap-icons">
+            <div class="expand">
+                <svg class="icon" aria-label="Expand Recently Viewed Product popup"><use xlink:href="#icon-expand"></use></svg>
+            </div>
+            <div class="backtoTop">
+                <svg class="icon" aria-label="{{theme_settings.halo_button_top}}"><use xlink:href="#icon-cross-line-top1"></use></svg>
+            </div>
+        </div>
+    </section>
+{{/if}}

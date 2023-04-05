@@ -1,0 +1,178 @@
+{{#if theme_settings.home_product_block_with_banner}}
+	{{#if cateId}}
+		{{#each categories}}
+		    {{#and (if id '==' ../cateId) (if ../cateImg)}}
+				<div class="halo-block halo-block-product halo-block-product-banners padding-top-30 padding-bottom-30" data-category-with-banner-id="{{id}}" data-category-with-banner-url="{{url}}" id="product-with-banner-{{id}}">
+					<div class="loadingOverlay"></div>
+					<div class="container">
+						<div class="halo-block-header">
+				            <h2 class="title">{{../../cateTitle}}</h2>
+				        </div>
+				        <div class="productCarousel-wrapper">
+				        	<div class="productCarousel"></div>
+			        		<div class="productBanner">
+			        			<div class="bannerContent">
+			        				{{#if ../../cateLink}}
+					        			<a class="image" href="{{../../../cateLink}}">
+					        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../settings.store_hash}}/product_images/uploaded_images/{{../../../cateImg}}" alt="{{../../../cateHeading}}" title="{{../../../cateHeading}}">
+					        			</a>
+					        		{{else}}
+					        			<div class="image">
+					        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../settings.store_hash}}/product_images/uploaded_images/{{../../../cateImg}}" alt="{{../../../cateHeading}}" title="{{../../../cateHeading}}">
+					        			</div>
+					        		{{/if}}
+				        			<div class="content">
+				        				{{#if ../../cateSubHeading}}
+				        					<span class="sub-heading">{{../../../cateSubHeading}}</span>
+				        				{{/if}}
+				        				{{#if ../../cateHeading}}
+				        					<h3 class="heading heading-with-line heading-with-line2">
+				        						<span>{{../../../cateHeading}}</span>
+				        					</h3>
+				        				{{/if}}
+				        				{{#or (if ../../cateText1) (if ../../cateText2)}}
+				        					<span class="desc">
+	                                            {{../../../cateText1}} {{../../../cateText2}}
+	                                        </span>
+				        				{{/or}}
+				        				{{#if ../../cateBtn}}
+				        					<a href="{{../../../cateLink}}" class="button button--primary">{{../../../cateBtn}}</a>
+				        				{{/if}}
+				        			</div>
+			        			</div>
+			        		</div>
+				        </div>
+					</div>
+				</div>
+				{{{region name="home_below_products_by_category"}}}
+			{{else and (if id '==' ../../cateId) (unless ../../cateImg)}}
+				<div class="halo-block halo-block-product halo-block-product-banners2 padding-top-30 padding-bottom-30" data-category-with-banner-id="{{id}}" data-category-with-banner-url="{{url}}" id="product-with-banner-{{id}}">
+					<div class="loadingOverlay"></div>
+					<div class="container">
+						<div class="halo-block-header">
+				            <h2 class="title">{{../../../cateTitle}}</h2>
+				        </div>
+				        <div class="productCarousel"></div>
+					</div>
+				</div>
+				{{{region name="home_below_products_by_category"}}}
+			{{/and}}
+			{{#each children}}
+				{{#and (if id '==' ../../cateId) (if ../../cateImg)}}
+					<div class="halo-block halo-block-product halo-block-product-banners padding-top-30 padding-bottom-30" data-category-with-banner-id="{{id}}" data-category-with-banner-url="{{url}}" id="product-with-banner-{{id}}">
+						<div class="loadingOverlay"></div>
+						<div class="container">
+							<div class="halo-block-header">
+					            <h2 class="title">{{../../../cateTitle}}</h2>
+					        </div>
+					        <div class="productCarousel-wrapper">
+					        	<div class="productCarousel"></div>
+					        	<div class="productBanner">
+				        			<div class="bannerContent">
+				        				{{#if ../../../cateLink}}
+						        			<a class="image" href="{{../../../../cateLink}}">
+						        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../../settings.store_hash}}/product_images/uploaded_images/{{../../../../cateImg}}" alt="{{../../../../cateHeading}}" title="{{../../../../cateHeading}}">
+						        			</a>
+						        		{{else}}
+						        			<div class="image">
+						        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../../settings.store_hash}}/product_images/uploaded_images/{{../../../../cateImg}}" alt="{{../../../../cateHeading}}" title="{{../../../../cateHeading}}">
+						        			</div>
+						        		{{/if}}
+					        			<div class="content">
+					        				{{#if ../../../cateSubHeading}}
+					        					<span class="sub-heading">{{../../../../cateSubHeading}}</span>
+					        				{{/if}}
+					        				{{#if ../../../cateHeading}}
+					        					<h3 class="heading heading-with-line heading-with-line2">
+					        						<span>{{../../../../cateHeading}}</span>
+					        					</h3>
+					        				{{/if}}
+					        				{{#or (if ../../../cateText1) (if ../../../cateText2)}}
+					        					<span class="desc">
+		                                            {{../../../../cateText1}} {{../../../../cateText2}}
+		                                        </span>
+					        				{{/or}}
+					        				{{#if ../../../cateBtn}}
+					        					<a href="{{../../../../cateLink}}" class="button button--primary">{{../../../../cateBtn}}</a>
+					        				{{/if}}
+					        			</div>
+				        			</div>
+				        		</div>
+					        </div>
+						</div>
+					</div>
+					{{{region name="home_below_products_by_category"}}}
+				{{else and (if id '==' ../../../cateId) (unless ../../../cateImg)}}
+					<div class="halo-block halo-block-product halo-block-product-banners2 padding-top-30 padding-bottom-30" data-category-with-banner-id="{{id}}" data-category-with-banner-url="{{url}}" id="product-with-banner-{{id}}">
+						<div class="loadingOverlay"></div>
+						<div class="container">
+							<div class="halo-block-header">
+					            <h2 class="title">{{../../../../cateTitle}}</h2>
+					        </div>
+					        <div class="productCarousel"></div>
+						</div>
+					</div>
+					{{{region name="home_below_products_by_category"}}}
+				{{/and}}
+				{{#each children}}
+					{{#and (if id '==' ../../../../cateId) (if ../../../../cateImg)}}
+						<div class="halo-block halo-block-product halo-block-product-banners padding-top-30 padding-bottom-30" data-category-with-banner-id="{{id}}" data-category-with-banner-url="{{url}}" id="product-with-banner-{{id}}">
+							<div class="loadingOverlay"></div>
+							<div class="container">
+								<div class="halo-block-header">
+						            <h2 class="title">{{../../../../../cateTitle}}</h2>
+						        </div>
+						        <div class="productCarousel-wrapper">
+						        	<div class="productCarousel"></div>
+						        	<div class="productBanner">
+					        			<div class="bannerContent">
+					        				{{#if ../../../../../cateLink}}
+							        			<a class="image" href="{{../../../../../../cateLink}}">
+							        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../../../../settings.store_hash}}/product_images/uploaded_images/{{../../../../../../cateImg}}" alt="{{../../../../../../cateHeading}}" title="{{../../../../../../cateHeading}}">
+							        			</a>
+							        		{{else}}
+							        			<div class="image">
+							        				<img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../../../../../../settings.store_hash}}/product_images/uploaded_images/{{../../../../../../cateImg}}" alt="{{../../../../../../cateHeading}}" title="{{../../../../../../cateHeading}}">
+							        			</div>
+							        		{{/if}}
+						        			<div class="content">
+						        				{{#if ../../../../../cateSubHeading}}
+						        					<span class="sub-heading">{{../../../../../../cateSubHeading}}</span>
+						        				{{/if}}
+						        				{{#if ../../../../../cateHeading}}
+						        					<h3 class="heading heading-with-line heading-with-line2">
+						        						<span>{{../../../../../../cateHeading}}</span>
+						        					</h3>
+						        				{{/if}}
+						        				{{#or (if ../../../../../cateText1) (if ../../../../../cateText2)}}
+						        					<span class="desc">
+			                                            {{../../../../../../cateText1}} {{../../../../../../cateText2}}
+			                                        </span>
+						        				{{/or}}
+						        				{{#if ../../../../../cateBtn}}
+						        					<a href="{{../../../../../../cateLink}}" class="button button--primary">{{../../../../../../cateBtn}}</a>
+						        				{{/if}}
+						        			</div>
+					        			</div>
+					        		</div>
+						        </div>
+							</div>
+						</div>
+						{{{region name="home_below_products_by_category"}}}
+					{{else and (if id '==' ../../../../../cateId) (unless ../../../../../cateImg)}}
+						<div class="halo-block halo-block-product halo-block-product-banners2 padding-top-30 padding-bottom-30" data-category-with-banner-id="{{id}}" data-category-with-banner-url="{{url}}" id="product-with-banner-{{id}}">
+							<div class="loadingOverlay"></div>
+							<div class="container">
+								<div class="halo-block-header">
+						            <h2 class="title">{{../../../../../../cateTitle}}</h2>
+						        </div>
+						        <div class="productCarousel"></div>
+							</div>
+						</div>
+						{{{region name="home_below_products_by_category"}}}
+					{{/and}}
+				{{/each}}
+			{{/each}}
+		{{/each}}
+	{{/if}}
+{{/if}}

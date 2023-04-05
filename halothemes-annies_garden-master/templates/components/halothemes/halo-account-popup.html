@@ -1,0 +1,57 @@
+<div id="{{data}}-popup" class="account-popup {{#if data '==' 'account-pc'}}halo-auth-popup{{/if}}">
+    <div class="halo-popup-content">
+        <ul class="account-dropdown">
+            <li class="account-item">
+                <a class="account-action" href="{{urls.account.orders.all}}">
+                    <span class="text">{{lang 'account.nav.orders'}}</span>
+                </a>
+            </li>
+            {{#if settings.returns_enabled}}
+                <li class="account-item">
+                    <a class="account-action" href="{{urls.account.returns}}">
+                        <span class="text">{{lang 'account.nav.returns'}}</span>
+                    </a>
+                </li>
+            {{/if}}
+            <li class="account-item">
+                <a class="account-action" href="{{urls.account.inbox}}">
+                    <span class="text">Messages</span>
+                </a>
+            </li>
+             <li class="account-item">
+                <a class="account-action" href="{{urls.account.addresses}}">
+                    <span class="text">{{lang 'account.nav.addresses'}}</span>
+                </a>
+            </li>
+            {{#if settings.show_payment_methods}}
+                <li class="account-item">
+                    <a class="account-action" href="{{urls.account.payment_methods.all}}">
+                        <span class="text">{{lang 'account.nav.payment_methods'}}</span>
+                    </a>
+                </li>
+            {{/if}}
+            {{#if settings.show_wishlist}}
+                <li class="account-item">
+                    <a class="account-action" href="{{urls.account.wishlists.all}}">
+                        <span class="text">Wishlist</span>
+                    </a>
+                </li>
+            {{/if}}
+            <li class="account-item">
+                <a class="account-action" href="{{urls.account.recent_items}}">
+                    <span class="text">{{lang 'account.nav.recently_viewed'}}</span>
+                </a>
+            </li>
+            <li class="account-item">
+                <a class="account-action" href="{{urls.account.details}}">
+                    <span class="text">{{lang 'account.nav.settings'}}</span>
+                </a>
+            </li>
+            <li class="account-item">
+                <a class="account-action" href="{{urls.auth.logout}}">
+                    <span class="text">{{lang 'common.logout'}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
